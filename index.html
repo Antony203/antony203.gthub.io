@@ -1,178 +1,434 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.Sc. Romel Percy Melgarejo Bolivar | Perfil Profesional</title>
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #0284c7;
-            --dark: #1f2937;
-            --light: #f3f4f6;
-            --white: #ffffff;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
-            background-color: var(--white);
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.3rem;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        ul {
-            list-style-type: none;
-        }
-        li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-        li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-        .badge {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.3rem;
-        }
-        .project-title {
-            font-weight: bold;
-            color: var(--dark);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV · Antony Jhonatan Flores Nina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16243D;
+    --ink-2:#21365A;
+    --paper:#FCFCFA;
+    --shell:#E7E7E1;
+    --text:#212A3A;
+    --muted:#6B7686;
+    --line:#E6E6DE;
+    --accent:#E2654E;
+    --accent-soft:rgba(226,101,78,.12);
+    --on-ink:#E6EBF3;
+    --on-ink-muted:#93A1B8;
+    --on-ink-line:rgba(255,255,255,.13);
+
+    --display:'Space Grotesk',system-ui,sans-serif;
+    --body:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  body{
+    font-family:var(--body);
+    color:var(--text);
+    background:var(--shell);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:40px 20px;
+  }
+
+  /* ---------- Sheet ---------- */
+  .page{
+    max-width:880px;
+    margin:0 auto;
+    background:var(--paper);
+    display:grid;
+    grid-template-columns:296px 1fr;
+    box-shadow:0 18px 50px -20px rgba(22,36,61,.45);
+    overflow:hidden;
+    min-height:1120px;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .aside{
+    background:linear-gradient(160deg,var(--ink) 0%,var(--ink-2) 100%);
+    color:var(--on-ink);
+    padding:38px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+  }
+
+  .mono{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .mono .badge{
+    width:62px;height:62px;
+    flex:none;
+    border:1.5px solid var(--accent);
+    border-radius:14px;
+    display:grid;place-items:center;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:24px;
+    letter-spacing:.5px;
+    color:#fff;
+    background:rgba(226,101,78,.10);
+  }
+  .mono .who small{
+    display:block;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--on-ink-muted);
+  }
+  .mono .who span{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:14px;
+    color:#fff;
+  }
+
+  .a-block h3{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:15px;
+    display:flex;align-items:center;gap:9px;
+  }
+  .a-block h3::after{
+    content:"";flex:1;height:1px;
+    background:var(--on-ink-line);
+  }
+
+  .contact{display:flex;flex-direction:column;gap:11px}
+  .contact a,.contact div{
+    color:var(--on-ink);
+    text-decoration:none;
+    font-size:13px;
+    display:flex;gap:10px;align-items:flex-start;
+    line-height:1.35;
+  }
+  .contact a:hover{color:var(--accent)}
+  .contact .ic{
+    color:var(--accent);
+    flex:none;margin-top:1px;
+    font-family:var(--mono);font-size:11px;
+    width:16px;text-align:center;
+  }
+
+  .skill{margin-bottom:14px}
+  .skill:last-child{margin-bottom:0}
+  .skill .top{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:6px;
+  }
+  .skill .top b{font-weight:500;font-size:12.5px;color:var(--on-ink)}
+  .skill .top em{
+    font-family:var(--mono);font-style:normal;
+    font-size:10.5px;color:var(--on-ink-muted);
+  }
+  .bar{height:5px;background:rgba(255,255,255,.10);border-radius:99px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips span{
+    font-family:var(--mono);
+    font-size:11px;
+    padding:4px 9px;
+    border:1px solid var(--on-ink-line);
+    border-radius:6px;
+    color:var(--on-ink);
+  }
+
+  .lang{display:flex;flex-direction:column;gap:9px}
+  .lang div{display:flex;justify-content:space-between;align-items:baseline}
+  .lang b{font-weight:500;font-size:13px;color:var(--on-ink)}
+  .lang em{
+    font-family:var(--mono);font-style:normal;
+    font-size:10.5px;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;
+  }
+
+  /* ---------- Main ---------- */
+  .main{padding:44px 44px 48px}
+
+  .head{margin-bottom:30px}
+  .head h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:33px;
+    line-height:1.05;
+    color:var(--ink);
+    letter-spacing:-.01em;
+  }
+  .head .role{
+    margin-top:8px;
+    font-size:14px;
+    color:var(--muted);
+    font-weight:500;
+    display:flex;align-items:center;gap:9px;
+  }
+  .head .role::before{
+    content:"";width:7px;height:7px;border-radius:99px;
+    background:var(--accent);flex:none;
+  }
+
+  /* regression signature */
+  .figure{
+    margin-top:20px;
+    width:100%;max-width:330px;
+  }
+  .figure svg{width:100%;height:auto;display:block}
+  .figure .cap{
+    font-family:var(--mono);
+    font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-top:6px;
+  }
+  .rl-axis{stroke:var(--line);stroke-width:1}
+  .rl-band{fill:var(--accent-soft)}
+  .rl-line{stroke:var(--accent);stroke-width:1.7;fill:none;stroke-linecap:round}
+  .rl-dot{fill:var(--ink)}
+
+  section.blk{margin-bottom:26px}
+  section.blk:last-child{margin-bottom:0}
+  .blk > h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink);
+    padding-bottom:8px;
+    margin-bottom:16px;
+    border-bottom:1.5px solid var(--ink);
+    display:flex;align-items:center;gap:10px;
+  }
+  .blk > h2::before{
+    content:"";width:14px;height:2px;background:var(--accent);
+  }
+
+  .lead{font-size:14px;color:#3a4456;line-height:1.6}
+
+  .item{margin-bottom:17px;break-inside:avoid}
+  .item:last-child{margin-bottom:0}
+  .item .row{
+    display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    margin-bottom:3px;
+  }
+  .item .row h4{
+    font-family:var(--display);
+    font-weight:600;font-size:15px;color:var(--ink);
+  }
+  .item .row .date{
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    white-space:nowrap;flex:none;
+  }
+  .item .sub{font-size:12.5px;color:var(--muted);font-weight:500;margin-bottom:5px}
+  .item p{font-size:13px;color:#3f495a;line-height:1.55}
+  .item .meta{
+    display:inline-flex;flex-wrap:wrap;gap:6px;margin-top:7px;
+  }
+  .item .meta span{
+    font-family:var(--mono);font-size:10.5px;
+    color:var(--ink);background:#F1F1EA;
+    padding:3px 8px;border-radius:5px;
+  }
+
+  .areas{display:flex;flex-wrap:wrap;gap:8px}
+  .areas span{
+    font-size:12.5px;
+    padding:6px 12px;
+    border:1px solid var(--line);
+    border-radius:99px;
+    color:var(--text);
+    background:#fff;
+  }
+  .areas span b{color:var(--accent);font-weight:600;margin-right:2px}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:760px){
+    body{padding:0}
+    .page{grid-template-columns:1fr;min-height:0;box-shadow:none}
+    .aside{order:2}
+    .main{order:1;padding:34px 26px}
+    .head h1{font-size:27px}
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    @page{size:A4;margin:0}
+    body{background:#fff;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page{box-shadow:none;max-width:100%;min-height:100vh}
+    .item,.blk{break-inside:avoid}
+    a{color:inherit}
+  }
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
 </head>
 <body>
+<main class="page">
 
-    <header>
-        <h1>M.Sc. Romel Percy Melgarejo Bolivar</h1>
-        <p>Docente Universitario | Especialista en TI e Ingeniería Estadística e Informática</p>
-    </header>
-
-    <div class="container">
-        
-        <section id="sobre-mi">
-            <h2>Resumen Profesional</h2>
-            <p>Magíster Scientiae en Informática con mención en Gerencia de Tecnologías de Información y Comunicaciones por la Universidad Nacional del Altiplano. Profesional especializado en Ciencia de Datos, redes telemáticas y desarrollo de software con registro de patentes de propiedad intelectual ante INDECOPI.</p>
-        </section>
-
-        <section id="educacion">
-            <h2>Formación Académica</h2>
-            <ul>
-                <li>
-                    <strong>Magíster Scientiae en Informática</strong><br>
-                    Mención en Gerencia de Tecnologías de Información y Comunicaciones — Universidad Nacional del Altiplano
-                </li>
-                <li>
-                    <strong>Ingeniero Estadístico e Informático</strong><br>
-                    Título Profesional — Universidad Nacional del Altiplano
-                </li>
-            </ul>
-        </section>
-
-        <section id="experiencia">
-            <h2>Experiencia Destacada</h2>
-            <ul>
-                <li>
-                    <strong>Docente Universitario</strong> — Universidad Nacional del Altiplano Puno<br>
-                    <span class="badge">2020 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Presidente del Capítulo de Ingenieros Estadísticos e Informáticos</strong> — Colegio de Ingenieros del Perú (CD Puno)<br>
-                    <span class="badge">2022 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Docente Auxiliar Ordinario</strong> — Universidad Nacional de Moquegua
-                </li>
-            </ul>
-        </section>
-
-        <section id="propiedad-intelectual">
-            <h2>Software y Propiedad Intelectual (INDECOPI)</h2>
-            <ul>
-                <li>
-                    <span class="project-title">Criptologin</span> — Módulo integrable de validación de usuarios mediante token USB DNI electrónico (Reg. 31152022).
-                </li>
-                <li>
-                    <span class="project-title">Enviromaker</span> — Software de procesamiento y generación de ambientes tridimensionales (Reg. 31132022).
-                </li>
-                <li>
-                    <span class="project-title">GLPAK GUI</span> — Interfaz gráfica para renderizado 3D en ventanas Win GDI+ (Reg. 31122022).
-                </li>
-                <li>
-                    <span class="project-title">Plataforma de Certificación Electrónica</span> — Derecho de autor por software (Reg. 1382017).
-                </li>
-            </ul>
-        </section>
-
-        <section id="investigacion">
-            <h2>Producción Científica</h2>
-            <ul>
-                <li>
-                    <strong>Capítulo de Libro (2023):</strong> "Predicción de diabetes en mujeres mediante un modelo probabilístico basado en Redes Bayesianas" en <em>O Cuidado em Saúde Baseado em Evidências</em>.
-                </li>
-                <li>
-                    <strong>Artículo de Revista (2022):</strong> "Arquitectura pervasiva con tecnologías WebRTC híbridas para el desarrollo de un framework Modelo Vista Controlador de tiempo real".
-                </li>
-            </ul>
-        </section>
-
+  <!-- SIDEBAR -->
+  <aside class="aside">
+    <div class="mono">
+      <div class="badge">AF</div>
+      <div class="who">
+        <small>Ingeniería</small>
+        <span>Estadística e Informática</span>
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Romel Percy Melgarejo Bolivar. Desarrollado y alojado con GitHub Pages.</p>
-    </footer>
+    <div class="a-block">
+      <h3>Contacto</h3>
+      <div class="contact">
+        <a href="mailto:antony.flores@example.com"><span class="ic">@</span>antony.flores@example.com</a>
+        <a href="tel:+51900000000"><span class="ic">#</span>+51 900 000 000</a>
+        <div><span class="ic">·</span>Puno, Perú</div>
+        <a href="#"><span class="ic">in</span>linkedin.com/in/antony-flores</a>
+        <a href="#"><span class="ic">gh</span>github.com/antony-flores</a>
+      </div>
+    </div>
 
+    <div class="a-block">
+      <h3>Habilidades</h3>
+      <div class="skill"><div class="top"><b>Modelado estadístico</b><em>90</em></div><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="top"><b>Series de tiempo · SARIMA</b><em>88</em></div><div class="bar"><i style="width:88%"></i></div></div>
+      <div class="skill"><div class="top"><b>Python · R</b><em>85</em></div><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill"><div class="top"><b>Excel avanzado</b><em>90</em></div><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="top"><b>SQL · Bases de datos</b><em>75</em></div><div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill"><div class="top"><b>Visualización de datos</b><em>80</em></div><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill"><div class="top"><b>LaTeX</b><em>85</em></div><div class="bar"><i style="width:85%"></i></div></div>
+    </div>
+
+    <div class="a-block">
+      <h3>Software</h3>
+      <div class="chips">
+        <span>EViews</span><span>R</span><span>Python</span><span>scikit-learn</span>
+        <span>SQL</span><span>Excel</span><span>Jupyter</span><span>LaTeX</span><span>Power BI</span>
+      </div>
+    </div>
+
+    <div class="a-block">
+      <h3>Idiomas</h3>
+      <div class="lang">
+        <div><b>Español</b><em>Nativo</em></div>
+        <div><b>Inglés</b><em>Intermedio</em></div>
+        <div><b>Quechua</b><em>Básico</em></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <header class="head">
+      <h1>Antony Jhonatan<br>Flores Nina</h1>
+      <div class="role">Ingeniero Estadístico e Informático</div>
+
+      <div class="figure" aria-hidden="true">
+        <svg viewBox="0 0 330 84" xmlns="http://www.w3.org/2000/svg">
+          <!-- axes -->
+          <line class="rl-axis" x1="22" y1="8" x2="22" y2="70"/>
+          <line class="rl-axis" x1="22" y1="70" x2="322" y2="70"/>
+          <!-- confidence band -->
+          <path class="rl-band" d="M 30,60 Q 176,38 316,11 L 316,23 Q 176,48 30,72 Z"/>
+          <!-- fitted line -->
+          <path class="rl-line" d="M 30,66 L 316,17"/>
+          <!-- scatter -->
+          <circle class="rl-dot" cx="46"  cy="63" r="2.6"/>
+          <circle class="rl-dot" cx="84"  cy="58" r="2.6"/>
+          <circle class="rl-dot" cx="120" cy="54" r="2.6"/>
+          <circle class="rl-dot" cx="158" cy="44" r="2.6"/>
+          <circle class="rl-dot" cx="198" cy="42" r="2.6"/>
+          <circle class="rl-dot" cx="240" cy="30" r="2.6"/>
+          <circle class="rl-dot" cx="282" cy="24" r="2.6"/>
+          <circle class="rl-dot" cx="308" cy="19" r="2.6"/>
+        </svg>
+        <div class="cap">Datos · Modelo · Decisión</div>
+      </div>
+    </header>
+
+    <section class="blk">
+      <h2>Perfil</h2>
+      <p class="lead">Ingeniero Estadístico e Informático con formación en modelado estadístico, análisis de datos y desarrollo de soluciones cuantitativas. He trabajado en regresión lineal múltiple, modelos de series de tiempo (SARIMA · Box-Jenkins), clustering K-Means y visualización de resultados usando R, Python, EViews y Excel. Me enfoco en el rigor metodológico y en traducir los datos en decisiones claras.</p>
+    </section>
+
+    <section class="blk">
+      <h2>Proyectos</h2>
+
+      <div class="item">
+        <div class="row">
+          <h4>Pronóstico de criminalidad — Región Puno</h4>
+          <div class="date">2025 — 2026</div>
+        </div>
+        <div class="sub">Modelado de series de tiempo · EViews 13</div>
+        <p>Modelo predictivo de incidencia delictiva mensual mediante metodología Box-Jenkins sobre 76 observaciones (2020–2026). Modelo seleccionado SARIMA(1,0,1)(1,0,0)₁₂ con error de pronóstico MAPE de 2.29 %.</p>
+        <div class="meta"><span>SARIMA</span><span>Box-Jenkins</span><span>ADF</span><span>EViews</span></div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h4>Regresión lineal múltiple — Crudo de petróleo</h4>
+          <div class="date">2025</div>
+        </div>
+        <div class="sub">Modelado matricial · Excel</div>
+        <p>Estimación matricial del modelo (X′X, β̂), diagnóstico de multicolinealidad (VIF), ANOVA y análisis de residuales sobre un conjunto de 32 observaciones y 4 predictores, con visualizaciones de apoyo.</p>
+        <div class="meta"><span>Regresión</span><span>VIF</span><span>ANOVA</span><span>Residuales</span></div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h4>Segmentación de países por indicadores</h4>
+          <div class="date">2025</div>
+        </div>
+        <div class="sub">Aprendizaje no supervisado · Python</div>
+        <p>Clustering K-Means de 167 países según indicadores socioeconómicos (k = 6), evaluado con coeficiente de silueta e interpretación de perfiles para apoyo a la toma de decisiones.</p>
+        <div class="meta"><span>K-Means</span><span>scikit-learn</span><span>Silhouette</span></div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h4>Modelo de datos — Facturación electrónica</h4>
+          <div class="date">2024</div>
+        </div>
+        <div class="sub">Diseño de datos · SQL</div>
+        <p>Diseño del modelo de datos y generación de datos semilla para un sistema de facturación, integrando la estructura de documentos fiscales y datos reales del sector retail.</p>
+        <div class="meta"><span>Modelo de datos</span><span>CSV/JSON</span><span>SQL</span></div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <h2>Educación</h2>
+      <div class="item">
+        <div class="row">
+          <h4>Universidad Nacional del Altiplano de Puno</h4>
+          <div class="date">2023 — Actualidad</div>
+        </div>
+        <div class="sub">Ingeniería Estadística e Informática · Puno, Perú</div>
+        <p>Cursos destacados: Modelos Lineales, Series de Tiempo, Métodos Multivariados, Bases de Datos, y Redes y Comunicaciones.</p>
+      </div>
+    </section>
+
+    <section class="blk">
+      <h2>Áreas de interés</h2>
+      <div class="areas">
+        <span><b>·</b>Estadística aplicada</span>
+        <span><b>·</b>Ciencia de datos</span>
+        <span><b>·</b>Machine Learning</span>
+        <span><b>·</b>Econometría</span>
+        <span><b>·</b>Investigación cuantitativa</span>
+      </div>
+    </section>
+  </div>
+
+</main>
 </body>
 </html>
