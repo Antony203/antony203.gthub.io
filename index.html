@@ -3,432 +3,566 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV · Antony Jhonatan Flores Nina</title>
+<title>Panel · Antony Jhonatan Flores Nina</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#16243D;
-    --ink-2:#21365A;
-    --paper:#FCFCFA;
-    --shell:#E7E7E1;
-    --text:#212A3A;
-    --muted:#6B7686;
-    --line:#E6E6DE;
-    --accent:#E2654E;
-    --accent-soft:rgba(226,101,78,.12);
-    --on-ink:#E6EBF3;
-    --on-ink-muted:#93A1B8;
-    --on-ink-line:rgba(255,255,255,.13);
+:root{
+  --ink:#16243D; --ink-2:#1E3050;
+  --bg:#F2F3EF;
+  --card:#FFFFFF;
+  --text:#1F2733; --muted:#6B7686; --faint:#9AA3B0;
+  --line:#E9E9E3; --line-2:#F0F0EA;
+  --accent:#E2654E; --accent-2:#F0876F; --accent-soft:rgba(226,101,78,.12);
+  --navy:#2B4263; --teal:#4C9A8E; --amber:#E0A458; --ok:#3E9E7A;
+  --on-ink:#E6EBF3; --on-ink-muted:#92A1B8; --on-ink-line:rgba(255,255,255,.10);
+  --shadow:0 1px 2px rgba(22,36,61,.04),0 10px 26px -16px rgba(22,36,61,.22);
 
-    --display:'Space Grotesk',system-ui,sans-serif;
-    --body:'IBM Plex Sans',system-ui,sans-serif;
-    --mono:'IBM Plex Mono',ui-monospace,monospace;
-  }
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5}
 
-  *{box-sizing:border-box;margin:0;padding:0}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
 
-  body{
-    font-family:var(--body);
-    color:var(--text);
-    background:var(--shell);
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    padding:40px 20px;
-  }
+/* ---------------- SIDEBAR ---------------- */
+.side{
+  background:linear-gradient(168deg,var(--ink),var(--ink-2));
+  color:var(--on-ink);
+  padding:24px 18px;
+  position:sticky;top:0;height:100vh;
+  display:flex;flex-direction:column;gap:26px;
+}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 6px}
+.brand .logo{
+  width:42px;height:42px;flex:none;border-radius:11px;
+  border:1.5px solid var(--accent);background:rgba(226,101,78,.12);
+  display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:17px;color:#fff;
+}
+.brand b{font-family:var(--display);font-weight:600;font-size:15px;color:#fff;line-height:1.1}
+.brand small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-ink-muted);margin-top:2px}
 
-  /* ---------- Sheet ---------- */
-  .page{
-    max-width:880px;
-    margin:0 auto;
-    background:var(--paper);
-    display:grid;
-    grid-template-columns:296px 1fr;
-    box-shadow:0 18px 50px -20px rgba(22,36,61,.45);
-    overflow:hidden;
-    min-height:1120px;
-  }
+.nav{display:flex;flex-direction:column;gap:3px}
+.nav .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-ink-muted);padding:6px 12px 4px}
+.nav a{
+  display:flex;align-items:center;gap:11px;
+  padding:9px 12px;border-radius:9px;text-decoration:none;
+  color:var(--on-ink);font-size:13.5px;font-weight:500;
+  transition:background .15s,color .15s;
+}
+.nav a .gl{width:16px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--on-ink-muted);transition:color .15s}
+.nav a:hover{background:rgba(255,255,255,.06)}
+.nav a.active{background:rgba(226,101,78,.16);color:#fff}
+.nav a.active .gl{color:var(--accent)}
 
-  /* ---------- Sidebar ---------- */
-  .aside{
-    background:linear-gradient(160deg,var(--ink) 0%,var(--ink-2) 100%);
-    color:var(--on-ink);
-    padding:38px 28px;
-    display:flex;
-    flex-direction:column;
-    gap:30px;
-  }
+.side-foot{margin-top:auto;border-top:1px solid var(--on-ink-line);padding-top:16px}
+.side-foot .st{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--on-ink)}
+.dot{width:8px;height:8px;border-radius:99px;background:var(--ok);box-shadow:0 0 0 3px rgba(62,158,122,.18)}
+.side-foot small{display:block;font-family:var(--mono);font-size:10px;color:var(--on-ink-muted);margin-top:6px}
 
-  .mono{
-    display:flex;
-    align-items:center;
-    gap:14px;
-  }
-  .mono .badge{
-    width:62px;height:62px;
-    flex:none;
-    border:1.5px solid var(--accent);
-    border-radius:14px;
-    display:grid;place-items:center;
-    font-family:var(--display);
-    font-weight:700;
-    font-size:24px;
-    letter-spacing:.5px;
-    color:#fff;
-    background:rgba(226,101,78,.10);
-  }
-  .mono .who small{
-    display:block;
-    font-family:var(--mono);
-    font-size:10.5px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--on-ink-muted);
-  }
-  .mono .who span{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:14px;
-    color:#fff;
-  }
+/* ---------------- MAIN ---------------- */
+.main{min-width:0;display:flex;flex-direction:column}
+.topbar{
+  position:sticky;top:0;z-index:20;
+  background:rgba(242,243,239,.85);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  padding:14px 30px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.topbar .crumb b{font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink)}
+.topbar .crumb span{font-family:var(--mono);font-size:11px;color:var(--muted);display:block;margin-top:2px;letter-spacing:.04em}
+.tb-right{display:flex;align-items:center;gap:14px}
+.tb-date{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.btn{
+  font-family:var(--body);font-weight:600;font-size:12.5px;cursor:pointer;
+  border:none;border-radius:9px;padding:9px 15px;background:var(--accent);color:#fff;
+  display:inline-flex;align-items:center;gap:7px;transition:background .15s,transform .1s;
+}
+.btn:hover{background:var(--accent-2)}
+.btn:active{transform:translateY(1px)}
+.chip-user{display:flex;align-items:center;gap:9px;padding:5px 12px 5px 6px;background:var(--card);border:1px solid var(--line);border-radius:99px}
+.chip-user .av{width:28px;height:28px;border-radius:99px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:11px}
+.chip-user b{font-size:12.5px;color:var(--ink)}
 
-  .a-block h3{
-    font-family:var(--mono);
-    font-size:11px;
-    font-weight:500;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:15px;
-    display:flex;align-items:center;gap:9px;
-  }
-  .a-block h3::after{
-    content:"";flex:1;height:1px;
-    background:var(--on-ink-line);
-  }
+.content{padding:24px 30px 40px;flex:1}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
 
-  .contact{display:flex;flex-direction:column;gap:11px}
-  .contact a,.contact div{
-    color:var(--on-ink);
-    text-decoration:none;
-    font-size:13px;
-    display:flex;gap:10px;align-items:flex-start;
-    line-height:1.35;
-  }
-  .contact a:hover{color:var(--accent)}
-  .contact .ic{
-    color:var(--accent);
-    flex:none;margin-top:1px;
-    font-family:var(--mono);font-size:11px;
-    width:16px;text-align:center;
-  }
+/* ---------------- CARD BASE ---------------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:20px}
+.card-h{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.card-h h3{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink)}
+.card-h p{font-size:12px;color:var(--muted);margin-top:3px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 
-  .skill{margin-bottom:14px}
-  .skill:last-child{margin-bottom:0}
-  .skill .top{
-    display:flex;justify-content:space-between;align-items:baseline;
-    margin-bottom:6px;
-  }
-  .skill .top b{font-weight:500;font-size:12.5px;color:var(--on-ink)}
-  .skill .top em{
-    font-family:var(--mono);font-style:normal;
-    font-size:10.5px;color:var(--on-ink-muted);
-  }
-  .bar{height:5px;background:rgba(255,255,255,.10);border-radius:99px;overflow:hidden}
-  .bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+/* ---------------- PROFILE HEADER ---------------- */
+.profile{grid-column:span 12;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.profile .pic{
+  width:84px;height:84px;flex:none;border-radius:20px;
+  background:linear-gradient(160deg,var(--ink),var(--ink-2));
+  display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:30px;color:#fff;
+  box-shadow:0 0 0 3px #fff,0 0 0 4.5px var(--accent);
+}
+.profile .id{flex:1;min-width:220px}
+.profile .id h1{font-family:var(--display);font-weight:700;font-size:25px;color:var(--ink);line-height:1.1;letter-spacing:-.01em}
+.profile .id .role{font-size:14px;color:var(--accent);font-weight:600;margin-top:4px}
+.profile .id .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.profile .id .links a,.profile .id .links span{
+  font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);padding:4px 9px;border-radius:7px;
+}
+.profile .id .links a:hover{color:var(--accent);border-color:var(--accent)}
+.profile .badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge-card{background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:11px 15px;text-align:center;min-width:96px}
+.badge-card b{display:block;font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink)}
+.badge-card small{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-  .chips{display:flex;flex-wrap:wrap;gap:7px}
-  .chips span{
-    font-family:var(--mono);
-    font-size:11px;
-    padding:4px 9px;
-    border:1px solid var(--on-ink-line);
-    border-radius:6px;
-    color:var(--on-ink);
-  }
+/* ---------------- KPI ---------------- */
+.kpi{grid-column:span 3}
+.kpi .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kpi .num{font-family:var(--display);font-weight:700;font-size:30px;color:var(--ink);line-height:1;margin:9px 0 7px}
+.kpi .foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.trend{font-family:var(--mono);font-size:11px;font-weight:500;padding:2px 7px;border-radius:6px;display:inline-flex;align-items:center;gap:3px}
+.trend.up{color:var(--ok);background:rgba(62,158,122,.12)}
+.trend.flat{color:var(--muted);background:var(--line-2)}
+.spark{width:78px;height:26px}
 
-  .lang{display:flex;flex-direction:column;gap:9px}
-  .lang div{display:flex;justify-content:space-between;align-items:baseline}
-  .lang b{font-weight:500;font-size:13px;color:var(--on-ink)}
-  .lang em{
-    font-family:var(--mono);font-style:normal;
-    font-size:10.5px;color:var(--accent);
-    text-transform:uppercase;letter-spacing:.06em;
-  }
+/* ---------------- CHART CARDS ---------------- */
+.c-hero{grid-column:span 8}
+.c-donut{grid-column:span 4}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px}
+.legend .li{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
+.legend .sw{width:11px;height:11px;border-radius:3px}
+.legend .sw.line{height:3px;width:18px;border-radius:2px}
+.dash{background:repeating-linear-gradient(90deg,var(--accent) 0 4px,transparent 4px 7px)!important}
+.hero-svg{width:100%;height:auto;display:block}
+.hero-note{margin-top:12px;font-family:var(--mono);font-size:10.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.hero-note b{color:var(--accent)}
 
-  /* ---------- Main ---------- */
-  .main{padding:44px 44px 48px}
+.donut-wrap{display:flex;align-items:center;gap:18px}
+.donut-svg{width:128px;height:128px;flex:none}
+.donut-center{font-family:var(--display);font-weight:700;font-size:20px;fill:var(--ink)}
+.donut-sub{font-family:var(--mono);font-size:7px;letter-spacing:.1em;fill:var(--muted)}
+.donut-list{display:flex;flex-direction:column;gap:9px;flex:1}
+.donut-list .row{display:flex;align-items:center;gap:9px;font-size:12.5px}
+.donut-list .row b{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--ink)}
+.donut-list .dotc{width:9px;height:9px;border-radius:3px;flex:none}
 
-  .head{margin-bottom:30px}
-  .head h1{
-    font-family:var(--display);
-    font-weight:700;
-    font-size:33px;
-    line-height:1.05;
-    color:var(--ink);
-    letter-spacing:-.01em;
-  }
-  .head .role{
-    margin-top:8px;
-    font-size:14px;
-    color:var(--muted);
-    font-weight:500;
-    display:flex;align-items:center;gap:9px;
-  }
-  .head .role::before{
-    content:"";width:7px;height:7px;border-radius:99px;
-    background:var(--accent);flex:none;
-  }
+/* ---------------- SKILLS / LANG ---------------- */
+.c-skills{grid-column:span 7}
+.c-side{grid-column:span 5;display:flex;flex-direction:column;gap:18px}
+.skill{margin-bottom:13px}
+.skill:last-child{margin-bottom:0}
+.skill .t{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.skill .t b{font-weight:500;font-size:12.5px;color:var(--text)}
+.skill .t em{font-family:var(--mono);font-style:normal;font-size:10.5px;color:var(--muted)}
+.track{height:6px;background:var(--line-2);border-radius:99px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--navy),var(--accent))}
 
-  /* regression signature */
-  .figure{
-    margin-top:20px;
-    width:100%;max-width:330px;
-  }
-  .figure svg{width:100%;height:auto;display:block}
-  .figure .cap{
-    font-family:var(--mono);
-    font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--muted);margin-top:6px;
-  }
-  .rl-axis{stroke:var(--line);stroke-width:1}
-  .rl-band{fill:var(--accent-soft)}
-  .rl-line{stroke:var(--accent);stroke-width:1.7;fill:none;stroke-linecap:round}
-  .rl-dot{fill:var(--ink)}
+.lang{display:flex;flex-direction:column;gap:12px}
+.lang .row{display:flex;align-items:center;gap:12px}
+.lang .row b{font-size:13px;width:74px;flex:none}
+.lang .row .track{flex:1}
+.lang .row em{font-family:var(--mono);font-style:normal;font-size:10px;color:var(--accent);text-transform:uppercase;width:74px;text-align:right;flex:none}
 
-  section.blk{margin-bottom:26px}
-  section.blk:last-child{margin-bottom:0}
-  .blk > h2{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:13px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink);
-    padding-bottom:8px;
-    margin-bottom:16px;
-    border-bottom:1.5px solid var(--ink);
-    display:flex;align-items:center;gap:10px;
-  }
-  .blk > h2::before{
-    content:"";width:14px;height:2px;background:var(--accent);
-  }
+.tools{display:flex;flex-wrap:wrap;gap:7px}
+.tools span{font-family:var(--mono);font-size:11px;padding:5px 10px;border:1px solid var(--line);border-radius:7px;color:var(--ink);background:var(--bg)}
 
-  .lead{font-size:14px;color:#3a4456;line-height:1.6}
+/* ---------------- HEATMAP ---------------- */
+.c-heat{grid-column:span 12}
+.heatmap{display:flex;gap:3px;overflow-x:auto;padding:2px 0 6px}
+.hm-col{display:flex;flex-direction:column;gap:3px}
+.hm-cell{width:14px;height:14px;border-radius:3px;background:#EDEDE7}
+.lvl-0{background:#EDEDE7}
+.lvl-1{background:rgba(226,101,78,.28)}
+.lvl-2{background:rgba(226,101,78,.5)}
+.lvl-3{background:rgba(226,101,78,.74)}
+.lvl-4{background:var(--accent)}
+.heat-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:12px;flex-wrap:wrap}
+.heat-foot .lg{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.heat-foot .lg .hm-cell{width:11px;height:11px}
+.heat-foot .cnt{font-family:var(--mono);font-size:11px;color:var(--ink)}
 
-  .item{margin-bottom:17px;break-inside:avoid}
-  .item:last-child{margin-bottom:0}
-  .item .row{
-    display:flex;justify-content:space-between;align-items:baseline;gap:14px;
-    margin-bottom:3px;
-  }
-  .item .row h4{
-    font-family:var(--display);
-    font-weight:600;font-size:15px;color:var(--ink);
-  }
-  .item .row .date{
-    font-family:var(--mono);font-size:11px;color:var(--accent);
-    white-space:nowrap;flex:none;
-  }
-  .item .sub{font-size:12.5px;color:var(--muted);font-weight:500;margin-bottom:5px}
-  .item p{font-size:13px;color:#3f495a;line-height:1.55}
-  .item .meta{
-    display:inline-flex;flex-wrap:wrap;gap:6px;margin-top:7px;
-  }
-  .item .meta span{
-    font-family:var(--mono);font-size:10.5px;
-    color:var(--ink);background:#F1F1EA;
-    padding:3px 8px;border-radius:5px;
-  }
+/* ---------------- PROJECTS TABLE ---------------- */
+.c-proj{grid-column:span 7}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 10px 10px;font-weight:500}
+.tbl td{padding:13px 10px;border-top:1px solid var(--line-2);vertical-align:middle}
+.tbl tr td:first-child b{font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--ink)}
+.tbl tr td:first-child small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.tg{font-family:var(--mono);font-size:10px;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:2px 7px;border-radius:5px;margin-right:4px;display:inline-block;margin-bottom:3px}
+.metric{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:500}
+.status{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.status.done{color:var(--ok);background:rgba(62,158,122,.12)}
+.status.live{color:var(--accent);background:var(--accent-soft)}
 
-  .areas{display:flex;flex-wrap:wrap;gap:8px}
-  .areas span{
-    font-size:12.5px;
-    padding:6px 12px;
-    border:1px solid var(--line);
-    border-radius:99px;
-    color:var(--text);
-    background:#fff;
-  }
-  .areas span b{color:var(--accent);font-weight:600;margin-right:2px}
+/* ---------------- TIMELINE ---------------- */
+.c-time{grid-column:span 5}
+.tl{position:relative;padding-left:6px}
+.tl .it{position:relative;padding:0 0 18px 22px;border-left:1.5px solid var(--line)}
+.tl .it:last-child{border-left-color:transparent;padding-bottom:0}
+.tl .it::before{content:"";position:absolute;left:-6px;top:1px;width:11px;height:11px;border-radius:99px;background:#fff;border:2px solid var(--accent)}
+.tl .it.navy::before{border-color:var(--navy)}
+.tl .it b{font-size:13px;color:var(--ink);font-weight:600;display:block}
+.tl .it p{font-size:12px;color:var(--muted);margin-top:2px}
+.tl .it time{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:4px;display:block}
 
-  /* ---------- Responsive ---------- */
-  @media (max-width:760px){
-    body{padding:0}
-    .page{grid-template-columns:1fr;min-height:0;box-shadow:none}
-    .aside{order:2}
-    .main{order:1;padding:34px 26px}
-    .head h1{font-size:27px}
-  }
+.foot-note{grid-column:span 12;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--faint);padding-top:6px}
 
-  /* ---------- Print ---------- */
-  @media print{
-    @page{size:A4;margin:0}
-    body{background:#fff;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .page{box-shadow:none;max-width:100%;min-height:100vh}
-    .item,.blk{break-inside:avoid}
-    a{color:inherit}
-  }
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width:1080px){
+  .kpi{grid-column:span 6}
+  .c-hero,.c-donut,.c-skills,.c-side,.c-proj,.c-time{grid-column:span 12}
+}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr}
+  .side{position:static;height:auto;flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 16px}
+  .side-foot,.nav .lbl{display:none}
+  .nav{flex-direction:row;gap:4px}
+  .nav a{padding:8px 11px;white-space:nowrap}
+  .brand{flex:none}
+  .topbar{padding:12px 18px}
+  .tb-date,.chip-user b{display:none}
+  .content{padding:18px 16px 32px}
+  .kpi{grid-column:span 6}
+  .profile .badges{width:100%}
+}
+@media (max-width:460px){.kpi{grid-column:span 12}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media print{
+  .side,.topbar{display:none}
+  body{background:#fff}
+  .card{box-shadow:none;break-inside:avoid}
+}
 </style>
 </head>
 <body>
-<main class="page">
+<div class="app">
 
-  <!-- SIDEBAR -->
-  <aside class="aside">
-    <div class="mono">
-      <div class="badge">AF</div>
-      <div class="who">
-        <small>Ingeniería</small>
-        <span>Estadística e Informática</span>
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="side">
+    <div class="brand">
+      <div class="logo">AF</div>
+      <div>
+        <b>Antony Flores</b>
+        <small>Data · Estadística</small>
       </div>
     </div>
 
-    <div class="a-block">
-      <h3>Contacto</h3>
-      <div class="contact">
-        <a href="mailto:antony.flores@example.com"><span class="ic">@</span>antony.flores@example.com</a>
-        <a href="tel:+51900000000"><span class="ic">#</span>+51 900 000 000</a>
-        <div><span class="ic">·</span>Puno, Perú</div>
-        <a href="#"><span class="ic">in</span>linkedin.com/in/antony-flores</a>
-        <a href="#"><span class="ic">gh</span>github.com/antony-flores</a>
-      </div>
-    </div>
+    <nav class="nav">
+      <div class="lbl">Panel</div>
+      <a href="#resumen" class="active"><span class="gl">▣</span>Resumen</a>
+      <a href="#metricas"><span class="gl">∿</span>Métricas</a>
+      <a href="#competencias"><span class="gl">▤</span>Competencias</a>
+      <div class="lbl">Trabajo</div>
+      <a href="#actividad"><span class="gl">◉</span>Actividad</a>
+      <a href="#proyectos"><span class="gl">⌘</span>Proyectos</a>
+      <a href="#linea"><span class="gl">↻</span>Línea de tiempo</a>
+    </nav>
 
-    <div class="a-block">
-      <h3>Habilidades</h3>
-      <div class="skill"><div class="top"><b>Modelado estadístico</b><em>90</em></div><div class="bar"><i style="width:90%"></i></div></div>
-      <div class="skill"><div class="top"><b>Series de tiempo · SARIMA</b><em>88</em></div><div class="bar"><i style="width:88%"></i></div></div>
-      <div class="skill"><div class="top"><b>Python · R</b><em>85</em></div><div class="bar"><i style="width:85%"></i></div></div>
-      <div class="skill"><div class="top"><b>Excel avanzado</b><em>90</em></div><div class="bar"><i style="width:90%"></i></div></div>
-      <div class="skill"><div class="top"><b>SQL · Bases de datos</b><em>75</em></div><div class="bar"><i style="width:75%"></i></div></div>
-      <div class="skill"><div class="top"><b>Visualización de datos</b><em>80</em></div><div class="bar"><i style="width:80%"></i></div></div>
-      <div class="skill"><div class="top"><b>LaTeX</b><em>85</em></div><div class="bar"><i style="width:85%"></i></div></div>
-    </div>
-
-    <div class="a-block">
-      <h3>Software</h3>
-      <div class="chips">
-        <span>EViews</span><span>R</span><span>Python</span><span>scikit-learn</span>
-        <span>SQL</span><span>Excel</span><span>Jupyter</span><span>LaTeX</span><span>Power BI</span>
-      </div>
-    </div>
-
-    <div class="a-block">
-      <h3>Idiomas</h3>
-      <div class="lang">
-        <div><b>Español</b><em>Nativo</em></div>
-        <div><b>Inglés</b><em>Intermedio</em></div>
-        <div><b>Quechua</b><em>Básico</em></div>
-      </div>
+    <div class="side-foot">
+      <div class="st"><span class="dot"></span>Disponible para proyectos</div>
+      <small>UNA-Puno · VI ciclo · 2026-I</small>
     </div>
   </aside>
 
-  <!-- MAIN -->
+  <!-- ============ MAIN ============ -->
   <div class="main">
-    <header class="head">
-      <h1>Antony Jhonatan<br>Flores Nina</h1>
-      <div class="role">Ingeniero Estadístico e Informático</div>
-
-      <div class="figure" aria-hidden="true">
-        <svg viewBox="0 0 330 84" xmlns="http://www.w3.org/2000/svg">
-          <!-- axes -->
-          <line class="rl-axis" x1="22" y1="8" x2="22" y2="70"/>
-          <line class="rl-axis" x1="22" y1="70" x2="322" y2="70"/>
-          <!-- confidence band -->
-          <path class="rl-band" d="M 30,60 Q 176,38 316,11 L 316,23 Q 176,48 30,72 Z"/>
-          <!-- fitted line -->
-          <path class="rl-line" d="M 30,66 L 316,17"/>
-          <!-- scatter -->
-          <circle class="rl-dot" cx="46"  cy="63" r="2.6"/>
-          <circle class="rl-dot" cx="84"  cy="58" r="2.6"/>
-          <circle class="rl-dot" cx="120" cy="54" r="2.6"/>
-          <circle class="rl-dot" cx="158" cy="44" r="2.6"/>
-          <circle class="rl-dot" cx="198" cy="42" r="2.6"/>
-          <circle class="rl-dot" cx="240" cy="30" r="2.6"/>
-          <circle class="rl-dot" cx="282" cy="24" r="2.6"/>
-          <circle class="rl-dot" cx="308" cy="19" r="2.6"/>
-        </svg>
-        <div class="cap">Datos · Modelo · Decisión</div>
+    <header class="topbar">
+      <div class="crumb">
+        <b>Resumen del perfil</b>
+        <span>panel / resumen</span>
+      </div>
+      <div class="tb-right">
+        <span class="tb-date">Puno, Perú</span>
+        <button class="btn" onclick="window.print()">↧ Exportar PDF</button>
+        <div class="chip-user"><span class="av">AF</span><b>A. Flores</b></div>
       </div>
     </header>
 
-    <section class="blk">
-      <h2>Perfil</h2>
-      <p class="lead">Ingeniero Estadístico e Informático con formación en modelado estadístico, análisis de datos y desarrollo de soluciones cuantitativas. He trabajado en regresión lineal múltiple, modelos de series de tiempo (SARIMA · Box-Jenkins), clustering K-Means y visualización de resultados usando R, Python, EViews y Excel. Me enfoco en el rigor metodológico y en traducir los datos en decisiones claras.</p>
-    </section>
+    <div class="content">
+      <div class="grid">
 
-    <section class="blk">
-      <h2>Proyectos</h2>
+        <!-- ===== PROFILE HEADER ===== -->
+        <section class="card profile" id="resumen">
+          <div class="pic">AF</div>
+          <div class="id">
+            <h1>Antony Jhonatan Flores Nina</h1>
+            <div class="role">Ingeniero Estadístico e Informático</div>
+            <div class="links">
+              <a href="mailto:antony.flores@example.com">@ antony.flores@example.com</a>
+              <a href="#">in /antony-flores</a>
+              <a href="#">gh /antony-flores</a>
+              <span>◷ Puno, Perú</span>
+            </div>
+          </div>
+          <div class="badges">
+            <div class="badge-card"><b>VI</b><small>Ciclo</small></div>
+            <div class="badge-card"><b>UNA</b><small>Puno</small></div>
+            <div class="badge-card"><b>2023</b><small>Inicio</small></div>
+          </div>
+        </section>
 
-      <div class="item">
-        <div class="row">
-          <h4>Pronóstico de criminalidad — Región Puno</h4>
-          <div class="date">2025 — 2026</div>
+        <!-- ===== KPI CARDS ===== -->
+        <section class="card kpi" id="metricas">
+          <div class="lbl">Proyectos</div>
+          <div class="num">12</div>
+          <div class="foot">
+            <span class="trend up">▲ +3</span>
+            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,20 14,18 26,21 38,13 50,15 62,8 76,4"/></svg>
+          </div>
+        </section>
+        <section class="card kpi">
+          <div class="lbl">Modelos entrenados</div>
+          <div class="num">8</div>
+          <div class="foot">
+            <span class="trend up">▲ +2</span>
+            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,22 14,16 26,18 38,12 50,14 62,7 76,6"/></svg>
+          </div>
+        </section>
+        <section class="card kpi">
+          <div class="lbl">Precisión media</div>
+          <div class="num">97.7<span style="font-size:16px">%</span></div>
+          <div class="foot">
+            <span class="trend up">MAPE 2.29%</span>
+            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,17 14,15 26,16 38,11 50,12 62,9 76,7"/></svg>
+          </div>
+        </section>
+        <section class="card kpi">
+          <div class="lbl">Datasets analizados</div>
+          <div class="num">23</div>
+          <div class="foot">
+            <span class="trend up">▲ +5</span>
+            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,21 14,19 26,15 38,16 50,10 62,11 76,5"/></svg>
+          </div>
+        </section>
+
+        <!-- ===== HERO TIME SERIES ===== -->
+        <section class="card c-hero">
+          <div class="card-h">
+            <div>
+              <div class="eyebrow">Series de tiempo · SARIMA</div>
+              <h3 style="margin-top:5px">Pronóstico de incidencias mensuales</h3>
+              <p>Región Puno · observado vs. proyectado con banda de confianza</p>
+            </div>
+          </div>
+          <svg class="hero-svg" viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg">
+            <!-- gridlines -->
+            <g stroke="var(--line-2)" stroke-width="1">
+              <line x1="48" y1="20"  x2="620" y2="20"/>
+              <line x1="48" y1="75"  x2="620" y2="75"/>
+              <line x1="48" y1="130" x2="620" y2="130"/>
+              <line x1="48" y1="185" x2="620" y2="185"/>
+              <line x1="48" y1="240" x2="620" y2="240"/>
+            </g>
+            <!-- y labels -->
+            <g font-family="IBM Plex Mono" font-size="9" fill="var(--faint)">
+              <text x="40" y="23" text-anchor="end">160</text>
+              <text x="40" y="78" text-anchor="end">140</text>
+              <text x="40" y="133" text-anchor="end">120</text>
+              <text x="40" y="188" text-anchor="end">100</text>
+              <text x="40" y="243" text-anchor="end">80</text>
+            </g>
+            <!-- forecast boundary -->
+            <line x1="467" y1="20" x2="467" y2="240" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 3"/>
+            <text x="471" y="32" font-family="IBM Plex Mono" font-size="9" fill="var(--accent)">pronóstico →</text>
+            <!-- confidence band -->
+            <path d="M 467,66 L 506,55 L 544,45 L 582,57 L 620,71 L 620,95 L 582,77 L 544,61 L 506,67 L 467,74 Z" fill="rgba(226,101,78,.13)"/>
+            <!-- observed line -->
+            <path d="M 48,163 L 86,182 L 124,133 L 162,119 L 201,152 L 239,196 L 277,177 L 315,138 L 353,100 L 391,114 L 429,89 L 467,70" fill="none" stroke="var(--navy)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- forecast line -->
+            <path d="M 467,70 L 506,61 L 544,53 L 582,67 L 620,83" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="6 5" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- observed dots -->
+            <g fill="var(--navy)">
+              <circle cx="48" cy="163" r="3"/><circle cx="86" cy="182" r="3"/><circle cx="124" cy="133" r="3"/><circle cx="162" cy="119" r="3"/><circle cx="201" cy="152" r="3"/><circle cx="239" cy="196" r="3"/><circle cx="277" cy="177" r="3"/><circle cx="315" cy="138" r="3"/><circle cx="353" cy="100" r="3"/><circle cx="391" cy="114" r="3"/><circle cx="429" cy="89" r="3"/><circle cx="467" cy="70" r="3"/>
+            </g>
+            <!-- forecast peak marker -->
+            <circle cx="544" cy="53" r="4" fill="#fff" stroke="var(--accent)" stroke-width="2.4"/>
+            <text x="544" y="42" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="var(--accent)">148</text>
+            <!-- x labels -->
+            <g font-family="IBM Plex Mono" font-size="9" fill="var(--faint)" text-anchor="middle">
+              <text x="48" y="258">Ene'26</text>
+              <text x="239" y="258">Jun</text>
+              <text x="429" y="258">Nov</text>
+              <text x="544" y="270">Feb'27</text>
+            </g>
+          </svg>
+          <div class="legend">
+            <div class="li"><span class="sw line" style="background:var(--navy)"></span>Observado (2026)</div>
+            <div class="li"><span class="sw line dash"></span>Pronóstico (2027)</div>
+            <div class="li"><span class="sw" style="background:rgba(226,101,78,.2)"></span>IC 95%</div>
+          </div>
+          <div class="hero-note">Modelo <b>SARIMA(1,0,1)(1,0,0)₁₂</b> · 76 obs. · AIC 6.872 · pico estimado: <b>enero 2027 ≈ 148</b></div>
+        </section>
+
+        <!-- ===== DONUT ===== -->
+        <section class="card c-donut">
+          <div class="card-h"><div><div class="eyebrow">Enfoque</div><h3 style="margin-top:5px">Distribución por área</h3></div></div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" viewBox="0 0 140 140">
+              <g transform="rotate(-90 70 70)" fill="none" stroke-width="17" stroke-linecap="butt">
+                <circle cx="70" cy="70" r="54" stroke="var(--navy)"  stroke-dasharray="116.7 339.3" stroke-dashoffset="0"/>
+                <circle cx="70" cy="70" r="54" stroke="var(--accent)" stroke-dasharray="82.8 339.3"  stroke-dashoffset="-118.7"/>
+                <circle cx="70" cy="70" r="54" stroke="var(--teal)"   stroke-dasharray="65.9 339.3"  stroke-dashoffset="-203.6"/>
+                <circle cx="70" cy="70" r="54" stroke="var(--amber)"  stroke-dasharray="65.9 339.3"  stroke-dashoffset="-271.4"/>
+              </g>
+              <text x="70" y="68" text-anchor="middle" class="donut-center">100%</text>
+              <text x="70" y="82" text-anchor="middle" class="donut-sub">DEDICACIÓN</text>
+            </svg>
+            <div class="donut-list">
+              <div class="row"><span class="dotc" style="background:var(--navy)"></span>Estadística <b>35%</b></div>
+              <div class="row"><span class="dotc" style="background:var(--accent)"></span>Machine Learning <b>25%</b></div>
+              <div class="row"><span class="dotc" style="background:var(--teal)"></span>Bases de datos <b>20%</b></div>
+              <div class="row"><span class="dotc" style="background:var(--amber)"></span>Visualización <b>20%</b></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section class="card c-skills" id="competencias">
+          <div class="card-h"><div><div class="eyebrow">Stack técnico</div><h3 style="margin-top:5px">Competencias</h3></div></div>
+          <div class="skill"><div class="t"><b>Modelado estadístico</b><em>90%</em></div><div class="track"><i style="width:90%"></i></div></div>
+          <div class="skill"><div class="t"><b>Series de tiempo · SARIMA</b><em>88%</em></div><div class="track"><i style="width:88%"></i></div></div>
+          <div class="skill"><div class="t"><b>Python · R (pandas, scikit-learn)</b><em>85%</em></div><div class="track"><i style="width:85%"></i></div></div>
+          <div class="skill"><div class="t"><b>Excel avanzado</b><em>90%</em></div><div class="track"><i style="width:90%"></i></div></div>
+          <div class="skill"><div class="t"><b>SQL · Bases de datos</b><em>75%</em></div><div class="track"><i style="width:75%"></i></div></div>
+          <div class="skill"><div class="t"><b>Visualización de datos</b><em>80%</em></div><div class="track"><i style="width:80%"></i></div></div>
+          <div class="skill"><div class="t"><b>LaTeX</b><em>85%</em></div><div class="track"><i style="width:85%"></i></div></div>
+        </section>
+
+        <!-- ===== IDIOMAS + HERRAMIENTAS ===== -->
+        <div class="c-side">
+          <section class="card">
+            <div class="card-h"><div><div class="eyebrow">Comunicación</div><h3 style="margin-top:5px">Idiomas</h3></div></div>
+            <div class="lang">
+              <div class="row"><b>Español</b><div class="track"><i style="width:100%"></i></div><em>Nativo</em></div>
+              <div class="row"><b>Inglés</b><div class="track"><i style="width:60%"></i></div><em>Intermedio</em></div>
+              <div class="row"><b>Quechua</b><div class="track"><i style="width:35%"></i></div><em>Básico</em></div>
+            </div>
+          </section>
+          <section class="card">
+            <div class="card-h"><div><div class="eyebrow">Herramientas</div><h3 style="margin-top:5px">Software</h3></div></div>
+            <div class="tools">
+              <span>EViews</span><span>R</span><span>Python</span><span>scikit-learn</span><span>SQL</span><span>Excel</span><span>Jupyter</span><span>LaTeX</span><span>Power BI</span><span>Git</span>
+            </div>
+          </section>
         </div>
-        <div class="sub">Modelado de series de tiempo · EViews 13</div>
-        <p>Modelo predictivo de incidencia delictiva mensual mediante metodología Box-Jenkins sobre 76 observaciones (2020–2026). Modelo seleccionado SARIMA(1,0,1)(1,0,0)₁₂ con error de pronóstico MAPE de 2.29 %.</p>
-        <div class="meta"><span>SARIMA</span><span>Box-Jenkins</span><span>ADF</span><span>EViews</span></div>
-      </div>
 
-      <div class="item">
-        <div class="row">
-          <h4>Regresión lineal múltiple — Crudo de petróleo</h4>
-          <div class="date">2025</div>
-        </div>
-        <div class="sub">Modelado matricial · Excel</div>
-        <p>Estimación matricial del modelo (X′X, β̂), diagnóstico de multicolinealidad (VIF), ANOVA y análisis de residuales sobre un conjunto de 32 observaciones y 4 predictores, con visualizaciones de apoyo.</p>
-        <div class="meta"><span>Regresión</span><span>VIF</span><span>ANOVA</span><span>Residuales</span></div>
-      </div>
+        <!-- ===== HEATMAP ===== -->
+        <section class="card c-heat" id="actividad">
+          <div class="card-h"><div><div class="eyebrow">Últimos 6 meses</div><h3 style="margin-top:5px">Actividad de contribuciones</h3></div></div>
+          <div class="heatmap" id="heatmap"></div>
+          <div class="heat-foot">
+            <span class="cnt"><b id="hm-total">—</b> contribuciones registradas</span>
+            <span class="lg">Menos
+              <span class="hm-cell lvl-0"></span><span class="hm-cell lvl-1"></span><span class="hm-cell lvl-2"></span><span class="hm-cell lvl-3"></span><span class="hm-cell lvl-4"></span>
+              Más</span>
+          </div>
+        </section>
 
-      <div class="item">
-        <div class="row">
-          <h4>Segmentación de países por indicadores</h4>
-          <div class="date">2025</div>
-        </div>
-        <div class="sub">Aprendizaje no supervisado · Python</div>
-        <p>Clustering K-Means de 167 países según indicadores socioeconómicos (k = 6), evaluado con coeficiente de silueta e interpretación de perfiles para apoyo a la toma de decisiones.</p>
-        <div class="meta"><span>K-Means</span><span>scikit-learn</span><span>Silhouette</span></div>
-      </div>
+        <!-- ===== PROJECTS ===== -->
+        <section class="card c-proj" id="proyectos">
+          <div class="card-h"><div><div class="eyebrow">Portafolio</div><h3 style="margin-top:5px">Proyectos</h3></div></div>
+          <table class="tbl">
+            <thead><tr><th>Proyecto</th><th>Stack</th><th>Métrica</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><b>Pronóstico de criminalidad</b><small>Región Puno · 2026</small></td>
+                <td><span class="tg">SARIMA</span><span class="tg">EViews</span></td>
+                <td><span class="metric">MAPE 2.29%</span></td>
+                <td><span class="status done">Completado</span></td>
+              </tr>
+              <tr>
+                <td><b>Regresión múltiple — crudo</b><small>Modelado matricial · 2025</small></td>
+                <td><span class="tg">Excel</span><span class="tg">VIF</span></td>
+                <td><span class="metric">R² 0.94</span></td>
+                <td><span class="status done">Completado</span></td>
+              </tr>
+              <tr>
+                <td><b>Clustering de países</b><small>167 países · K-Means · 2025</small></td>
+                <td><span class="tg">Python</span><span class="tg">sklearn</span></td>
+                <td><span class="metric">Silueta 0.24</span></td>
+                <td><span class="status done">Completado</span></td>
+              </tr>
+              <tr>
+                <td><b>Facturación electrónica</b><small>Modelo de datos · 2024</small></td>
+                <td><span class="tg">SQL</span><span class="tg">CSV/JSON</span></td>
+                <td><span class="metric">+1.2k filas</span></td>
+                <td><span class="status live">En curso</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-      <div class="item">
-        <div class="row">
-          <h4>Modelo de datos — Facturación electrónica</h4>
-          <div class="date">2024</div>
-        </div>
-        <div class="sub">Diseño de datos · SQL</div>
-        <p>Diseño del modelo de datos y generación de datos semilla para un sistema de facturación, integrando la estructura de documentos fiscales y datos reales del sector retail.</p>
-        <div class="meta"><span>Modelo de datos</span><span>CSV/JSON</span><span>SQL</span></div>
-      </div>
-    </section>
+        <!-- ===== TIMELINE ===== -->
+        <section class="card c-time" id="linea">
+          <div class="card-h"><div><div class="eyebrow">Reciente</div><h3 style="margin-top:5px">Línea de tiempo</h3></div></div>
+          <div class="tl">
+            <div class="it">
+              <b>Pronóstico SARIMA actualizado</b>
+              <p>Reajuste del modelo y nueva proyección 2027.</p>
+              <time>hace 2 días</time>
+            </div>
+            <div class="it navy">
+              <b>Regresión del crudo finalizada</b>
+              <p>Diagnóstico VIF, ANOVA y análisis de residuales.</p>
+              <time>hace 1 semana</time>
+            </div>
+            <div class="it">
+              <b>Clustering K-Means (167 países)</b>
+              <p>Segmentación socioeconómica con k = 6.</p>
+              <time>hace 2 semanas</time>
+            </div>
+            <div class="it navy">
+              <b>Documento LaTeX · Modelos Lineales</b>
+              <p>Bandas de confianza con pgfplots.</p>
+              <time>hace 3 semanas</time>
+            </div>
+          </div>
+        </section>
 
-    <section class="blk">
-      <h2>Educación</h2>
-      <div class="item">
-        <div class="row">
-          <h4>Universidad Nacional del Altiplano de Puno</h4>
-          <div class="date">2023 — Actualidad</div>
-        </div>
-        <div class="sub">Ingeniería Estadística e Informática · Puno, Perú</div>
-        <p>Cursos destacados: Modelos Lineales, Series de Tiempo, Métodos Multivariados, Bases de Datos, y Redes y Comunicaciones.</p>
+        <div class="foot-note">Panel de perfil · datos de demostración · diseñado para Antony J. Flores Nina</div>
       </div>
-    </section>
-
-    <section class="blk">
-      <h2>Áreas de interés</h2>
-      <div class="areas">
-        <span><b>·</b>Estadística aplicada</span>
-        <span><b>·</b>Ciencia de datos</span>
-        <span><b>·</b>Machine Learning</span>
-        <span><b>·</b>Econometría</span>
-        <span><b>·</b>Investigación cuantitativa</span>
-      </div>
-    </section>
+    </div>
   </div>
+</div>
 
-</main>
+<script>
+(function(){
+  // ---- Contribution heatmap ----
+  var hm = document.getElementById('heatmap');
+  if(hm){
+    var weeks = 26, days = 7, total = 0;
+    for(var w=0; w<weeks; w++){
+      var col = document.createElement('div');
+      col.className = 'hm-col';
+      for(var d=0; d<days; d++){
+        var c = document.createElement('span');
+        var r = Math.random();
+        var lvl = r<0.42 ? 0 : r<0.66 ? 1 : r<0.84 ? 2 : r<0.95 ? 3 : 4;
+        if((d===0 || d===6) && lvl>0 && Math.random()<0.5) lvl--;
+        c.className = 'hm-cell lvl-' + lvl;
+        total += lvl;
+        col.appendChild(c);
+      }
+      hm.appendChild(col);
+    }
+    var t = document.getElementById('hm-total');
+    if(t) t.textContent = total * 4 + 96;
+  }
+
+  // ---- Sidebar active state ----
+  var links = document.querySelectorAll('.nav a');
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      links.forEach(function(x){ x.classList.remove('active'); });
+      a.classList.add('active');
+    });
+  });
+})();
+</script>
 </body>
 </html>
