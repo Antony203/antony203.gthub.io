@@ -3,566 +3,607 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panel · Antony Jhonatan Flores Nina</title>
+<title>CV — Antony Jhonatan Flores Nina</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#16243D; --ink-2:#1E3050;
-  --bg:#F2F3EF;
-  --card:#FFFFFF;
-  --text:#1F2733; --muted:#6B7686; --faint:#9AA3B0;
-  --line:#E9E9E3; --line-2:#F0F0EA;
-  --accent:#E2654E; --accent-2:#F0876F; --accent-soft:rgba(226,101,78,.12);
-  --navy:#2B4263; --teal:#4C9A8E; --amber:#E0A458; --ok:#3E9E7A;
-  --on-ink:#E6EBF3; --on-ink-muted:#92A1B8; --on-ink-line:rgba(255,255,255,.10);
-  --shadow:0 1px 2px rgba(22,36,61,.04),0 10px 26px -16px rgba(22,36,61,.22);
+  :root{
+    --ink:#161a23;
+    --muted:#565f70;
+    --soft:#7c8597;
+    --line:#e4e8ef;
+    --paper:#ffffff;
+    --sidebar:#f4f6f9;
+    --accent:#1f4e79;
+    --accent-soft:#e9eff6;
+    --chip:#eef1f6;
+    --ph-bg:#fff6cc;
+    --ph-line:#e3b341;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --display:'Space Grotesk','Inter',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  }
 
-  --display:'Space Grotesk',system-ui,sans-serif;
-  --body:'IBM Plex Sans',system-ui,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#dfe3ea;
+    font-family:var(--sans);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:28px 16px 56px;
+  }
 
-.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+  /* ---------- Editing banner (not printed) ---------- */
+  .note{
+    max-width:880px;
+    margin:0 auto 18px;
+    background:#fffaf0;
+    border:1px solid var(--ph-line);
+    border-left:5px solid var(--ph-line);
+    border-radius:8px;
+    padding:14px 18px;
+    font-size:13.5px;
+    color:#5b4a1a;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    justify-content:space-between;
+  }
+  .note p{margin:0;}
+  .note strong{color:#3f3411;}
+  .note mark{background:var(--ph-bg);padding:0 3px;border-radius:3px;}
+  .btn{
+    flex:0 0 auto;
+    font-family:var(--sans);
+    font-size:13px;
+    font-weight:600;
+    color:#fff;
+    background:var(--accent);
+    border:none;
+    border-radius:7px;
+    padding:9px 16px;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn:hover{background:#173d5e;}
+  .btn:focus-visible{outline:3px solid #9ec1e6;outline-offset:2px;}
 
-/* ---------------- SIDEBAR ---------------- */
-.side{
-  background:linear-gradient(168deg,var(--ink),var(--ink-2));
-  color:var(--on-ink);
-  padding:24px 18px;
-  position:sticky;top:0;height:100vh;
-  display:flex;flex-direction:column;gap:26px;
-}
-.brand{display:flex;align-items:center;gap:12px;padding:4px 6px}
-.brand .logo{
-  width:42px;height:42px;flex:none;border-radius:11px;
-  border:1.5px solid var(--accent);background:rgba(226,101,78,.12);
-  display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:17px;color:#fff;
-}
-.brand b{font-family:var(--display);font-weight:600;font-size:15px;color:#fff;line-height:1.1}
-.brand small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-ink-muted);margin-top:2px}
+  /* ---------- Page ---------- */
+  .page{
+    max-width:880px;
+    margin:0 auto;
+    background:var(--paper);
+    box-shadow:0 10px 40px rgba(20,26,35,.16);
+    border-radius:4px;
+    overflow:hidden;
+  }
 
-.nav{display:flex;flex-direction:column;gap:3px}
-.nav .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-ink-muted);padding:6px 12px 4px}
-.nav a{
-  display:flex;align-items:center;gap:11px;
-  padding:9px 12px;border-radius:9px;text-decoration:none;
-  color:var(--on-ink);font-size:13.5px;font-weight:500;
-  transition:background .15s,color .15s;
-}
-.nav a .gl{width:16px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--on-ink-muted);transition:color .15s}
-.nav a:hover{background:rgba(255,255,255,.06)}
-.nav a.active{background:rgba(226,101,78,.16);color:#fff}
-.nav a.active .gl{color:var(--accent)}
+  /* ---------- Header ---------- */
+  header{
+    padding:40px 46px 26px;
+    border-bottom:1px solid var(--line);
+  }
+  .focus{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:5px 10px;
+    border-radius:4px;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:34px;
+    line-height:1.08;
+    letter-spacing:-.015em;
+    margin:0;
+    padding-left:16px;
+    border-left:4px solid var(--accent);
+  }
+  .role{
+    margin:12px 0 0 16px;
+    font-size:15px;
+    font-weight:500;
+    color:var(--muted);
+    max-width:42ch;
+  }
 
-.side-foot{margin-top:auto;border-top:1px solid var(--on-ink-line);padding-top:16px}
-.side-foot .st{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--on-ink)}
-.dot{width:8px;height:8px;border-radius:99px;background:var(--ok);box-shadow:0 0 0 3px rgba(62,158,122,.18)}
-.side-foot small{display:block;font-family:var(--mono);font-size:10px;color:var(--on-ink-muted);margin-top:6px}
+  /* ---------- Header layout + photo ---------- */
+  .head-grid{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .head-text{min-width:0;}
+  .photo-frame{
+    flex:0 0 auto;
+    position:relative;
+    width:108px;height:108px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid var(--accent);
+    box-shadow:0 4px 14px rgba(31,78,121,.18);
+    cursor:pointer;
+    display:block;
+  }
+  .photo{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-hint{
+    position:absolute;
+    left:0;right:0;bottom:0;
+    background:rgba(31,78,121,.85);
+    color:#fff;
+    font-size:9px;
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    text-align:center;
+    padding:4px 2px;
+    pointer-events:none;
+  }
+  #fotoInput{display:none;}
+  @media (max-width:640px){
+    .head-grid{flex-direction:column-reverse;align-items:flex-start;gap:14px;}
+    .photo-frame{width:88px;height:88px;}
+  }
 
-/* ---------------- MAIN ---------------- */
-.main{min-width:0;display:flex;flex-direction:column}
-.topbar{
-  position:sticky;top:0;z-index:20;
-  background:rgba(242,243,239,.85);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
-  padding:14px 30px;display:flex;align-items:center;justify-content:space-between;gap:16px;
-}
-.topbar .crumb b{font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink)}
-.topbar .crumb span{font-family:var(--mono);font-size:11px;color:var(--muted);display:block;margin-top:2px;letter-spacing:.04em}
-.tb-right{display:flex;align-items:center;gap:14px}
-.tb-date{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-.btn{
-  font-family:var(--body);font-weight:600;font-size:12.5px;cursor:pointer;
-  border:none;border-radius:9px;padding:9px 15px;background:var(--accent);color:#fff;
-  display:inline-flex;align-items:center;gap:7px;transition:background .15s,transform .1s;
-}
-.btn:hover{background:var(--accent-2)}
-.btn:active{transform:translateY(1px)}
-.chip-user{display:flex;align-items:center;gap:9px;padding:5px 12px 5px 6px;background:var(--card);border:1px solid var(--line);border-radius:99px}
-.chip-user .av{width:28px;height:28px;border-radius:99px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:11px}
-.chip-user b{font-size:12.5px;color:var(--ink)}
+  /* ---------- Body grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:32% 68%;
+  }
+  .side{
+    background:var(--sidebar);
+    padding:30px 26px 40px;
+    border-right:1px solid var(--line);
+  }
+  .main{
+    padding:30px 34px 42px;
+  }
 
-.content{padding:24px 30px 40px;flex:1}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  /* ---------- Section headings ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 14px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .eyebrow::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+  .block{margin-bottom:26px;}
+  .block:last-child{margin-bottom:0;}
 
-/* ---------------- CARD BASE ---------------- */
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:20px}
-.card-h{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
-.card-h h3{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink)}
-.card-h p{font-size:12px;color:var(--muted);margin-top:3px}
-.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  /* ---------- Contact ---------- */
+  .contact{list-style:none;margin:0;padding:0;font-size:13px;}
+  .contact li{
+    display:flex;
+    gap:9px;
+    align-items:baseline;
+    margin-bottom:9px;
+    color:var(--ink);
+    word-break:break-word;
+  }
+  .contact .k{
+    flex:0 0 14px;
+    color:var(--accent);
+    font-family:var(--mono);
+    font-size:11px;
+    line-height:1.4;
+  }
+  .contact a{color:var(--ink);text-decoration:none;}
+  .contact a:hover{color:var(--accent);text-decoration:underline;}
 
-/* ---------------- PROFILE HEADER ---------------- */
-.profile{grid-column:span 12;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.profile .pic{
-  width:84px;height:84px;flex:none;border-radius:20px;
-  background:linear-gradient(160deg,var(--ink),var(--ink-2));
-  display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:30px;color:#fff;
-  box-shadow:0 0 0 3px #fff,0 0 0 4.5px var(--accent);
-}
-.profile .id{flex:1;min-width:220px}
-.profile .id h1{font-family:var(--display);font-weight:700;font-size:25px;color:var(--ink);line-height:1.1;letter-spacing:-.01em}
-.profile .id .role{font-size:14px;color:var(--accent);font-weight:600;margin-top:4px}
-.profile .id .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
-.profile .id .links a,.profile .id .links span{
-  font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;
-  display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);padding:4px 9px;border-radius:7px;
-}
-.profile .id .links a:hover{color:var(--accent);border-color:var(--accent)}
-.profile .badges{display:flex;gap:10px;flex-wrap:wrap}
-.badge-card{background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:11px 15px;text-align:center;min-width:96px}
-.badge-card b{display:block;font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink)}
-.badge-card small{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  /* ---------- Skills ---------- */
+  .skillgroup{margin-bottom:14px;}
+  .skillgroup:last-child{margin-bottom:0;}
+  .skillgroup h4{
+    margin:0 0 7px;
+    font-size:12px;
+    font-weight:600;
+    color:var(--muted);
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    background:var(--chip);
+    border:1px solid #e0e4eb;
+    color:#37404f;
+    padding:3px 8px;
+    border-radius:5px;
+    line-height:1.4;
+  }
+  .tag.pri{
+    background:var(--accent-soft);
+    border-color:#cdddf0;
+    color:var(--accent);
+  }
 
-/* ---------------- KPI ---------------- */
-.kpi{grid-column:span 3}
-.kpi .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.kpi .num{font-family:var(--display);font-weight:700;font-size:30px;color:var(--ink);line-height:1;margin:9px 0 7px}
-.kpi .foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.trend{font-family:var(--mono);font-size:11px;font-weight:500;padding:2px 7px;border-radius:6px;display:inline-flex;align-items:center;gap:3px}
-.trend.up{color:var(--ok);background:rgba(62,158,122,.12)}
-.trend.flat{color:var(--muted);background:var(--line-2)}
-.spark{width:78px;height:26px}
+  /* ---------- Languages ---------- */
+  .lang{list-style:none;margin:0;padding:0;font-size:13px;}
+  .lang li{display:flex;justify-content:space-between;margin-bottom:8px;}
+  .lang .lvl{color:var(--soft);font-family:var(--mono);font-size:11px;}
 
-/* ---------------- CHART CARDS ---------------- */
-.c-hero{grid-column:span 8}
-.c-donut{grid-column:span 4}
-.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px}
-.legend .li{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
-.legend .sw{width:11px;height:11px;border-radius:3px}
-.legend .sw.line{height:3px;width:18px;border-radius:2px}
-.dash{background:repeating-linear-gradient(90deg,var(--accent) 0 4px,transparent 4px 7px)!important}
-.hero-svg{width:100%;height:auto;display:block}
-.hero-note{margin-top:12px;font-family:var(--mono);font-size:10.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
-.hero-note b{color:var(--accent)}
+  /* ---------- Certifications ---------- */
+  .certlist{list-style:none;margin:0;padding:0;}
+  .certlist li{
+    margin-bottom:13px;
+    padding-left:11px;
+    border-left:2px solid var(--accent-soft);
+  }
+  .certlist li:last-child{margin-bottom:0;}
+  .certlist .ct{font-size:12.5px;font-weight:600;line-height:1.32;color:var(--ink);}
+  .certlist .cmeta{margin-top:3px;font-size:11.5px;}
+  .certlist .cent{color:var(--accent);font-weight:500;}
+  .certlist .cy{font-family:var(--mono);font-size:10.5px;color:var(--soft);}
 
-.donut-wrap{display:flex;align-items:center;gap:18px}
-.donut-svg{width:128px;height:128px;flex:none}
-.donut-center{font-family:var(--display);font-weight:700;font-size:20px;fill:var(--ink)}
-.donut-sub{font-family:var(--mono);font-size:7px;letter-spacing:.1em;fill:var(--muted)}
-.donut-list{display:flex;flex-direction:column;gap:9px;flex:1}
-.donut-list .row{display:flex;align-items:center;gap:9px;font-size:12.5px}
-.donut-list .row b{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--ink)}
-.donut-list .dotc{width:9px;height:9px;border-radius:3px;flex:none}
+  /* ---------- Profile ---------- */
+  .profile{font-size:14px;color:#2c333f;margin:0;}
 
-/* ---------------- SKILLS / LANG ---------------- */
-.c-skills{grid-column:span 7}
-.c-side{grid-column:span 5;display:flex;flex-direction:column;gap:18px}
-.skill{margin-bottom:13px}
-.skill:last-child{margin-bottom:0}
-.skill .t{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-.skill .t b{font-weight:500;font-size:12.5px;color:var(--text)}
-.skill .t em{font-family:var(--mono);font-style:normal;font-size:10.5px;color:var(--muted)}
-.track{height:6px;background:var(--line-2);border-radius:99px;overflow:hidden}
-.track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--navy),var(--accent))}
+  /* ---------- Entries (education / experience) ---------- */
+  .entry{
+    position:relative;
+    padding:0 0 18px 18px;
+    margin-bottom:4px;
+    border-left:2px solid var(--line);
+  }
+  .entry:last-child{padding-bottom:0;}
+  .entry::before{
+    content:"";
+    position:absolute;
+    left:-6px;top:5px;
+    width:10px;height:10px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px var(--paper);
+  }
+  .entry .top{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    align-items:baseline;
+    flex-wrap:wrap;
+  }
+  .entry .title{font-size:14.5px;font-weight:600;color:var(--ink);}
+  .entry .when{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--soft);
+    white-space:nowrap;
+  }
+  .entry .org{font-size:13px;color:var(--accent);font-weight:500;margin-top:2px;}
+  .entry .meta{font-size:12px;color:var(--soft);margin-top:1px;}
+  .entry ul{margin:8px 0 0;padding-left:17px;font-size:13px;color:#3a4250;}
+  .entry ul li{margin-bottom:4px;}
 
-.lang{display:flex;flex-direction:column;gap:12px}
-.lang .row{display:flex;align-items:center;gap:12px}
-.lang .row b{font-size:13px;width:74px;flex:none}
-.lang .row .track{flex:1}
-.lang .row em{font-family:var(--mono);font-style:normal;font-size:10px;color:var(--accent);text-transform:uppercase;width:74px;text-align:right;flex:none}
+  /* ---------- Projects ---------- */
+  .proj{margin-bottom:14px;}
+  .proj:last-child{margin-bottom:0;}
+  .proj .pt{font-size:14px;font-weight:600;}
+  .proj .pt .stack{
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:400;
+    color:var(--accent);
+    margin-left:8px;
+  }
+  .proj .pd{font-size:13px;color:#3a4250;margin-top:2px;}
 
-.tools{display:flex;flex-wrap:wrap;gap:7px}
-.tools span{font-family:var(--mono);font-size:11px;padding:5px 10px;border:1px solid var(--line);border-radius:7px;color:var(--ink);background:var(--bg)}
+  /* ---------- Placeholder marker ---------- */
+  .ph{
+    background:var(--ph-bg);
+    border-bottom:1.5px dashed var(--ph-line);
+    padding:0 2px;
+    border-radius:2px;
+  }
 
-/* ---------------- HEATMAP ---------------- */
-.c-heat{grid-column:span 12}
-.heatmap{display:flex;gap:3px;overflow-x:auto;padding:2px 0 6px}
-.hm-col{display:flex;flex-direction:column;gap:3px}
-.hm-cell{width:14px;height:14px;border-radius:3px;background:#EDEDE7}
-.lvl-0{background:#EDEDE7}
-.lvl-1{background:rgba(226,101,78,.28)}
-.lvl-2{background:rgba(226,101,78,.5)}
-.lvl-3{background:rgba(226,101,78,.74)}
-.lvl-4{background:var(--accent)}
-.heat-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:12px;flex-wrap:wrap}
-.heat-foot .lg{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
-.heat-foot .lg .hm-cell{width:11px;height:11px}
-.heat-foot .cnt{font-family:var(--mono);font-size:11px;color:var(--ink)}
+  /* ---------- Responsive ---------- */
+  @media (max-width:640px){
+    .grid{grid-template-columns:1fr;}
+    .side{border-right:none;border-bottom:1px solid var(--line);}
+    header{padding:30px 24px 22px;}
+    h1{font-size:27px;}
+    .main{padding:26px 22px 32px;}
+    .note{flex-direction:column;}
+  }
 
-/* ---------------- PROJECTS TABLE ---------------- */
-.c-proj{grid-column:span 7}
-.tbl{width:100%;border-collapse:collapse}
-.tbl th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 10px 10px;font-weight:500}
-.tbl td{padding:13px 10px;border-top:1px solid var(--line-2);vertical-align:middle}
-.tbl tr td:first-child b{font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--ink)}
-.tbl tr td:first-child small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
-.tg{font-family:var(--mono);font-size:10px;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:2px 7px;border-radius:5px;margin-right:4px;display:inline-block;margin-bottom:3px}
-.metric{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:500}
-.status{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:99px;white-space:nowrap}
-.status.done{color:var(--ok);background:rgba(62,158,122,.12)}
-.status.live{color:var(--accent);background:var(--accent-soft)}
-
-/* ---------------- TIMELINE ---------------- */
-.c-time{grid-column:span 5}
-.tl{position:relative;padding-left:6px}
-.tl .it{position:relative;padding:0 0 18px 22px;border-left:1.5px solid var(--line)}
-.tl .it:last-child{border-left-color:transparent;padding-bottom:0}
-.tl .it::before{content:"";position:absolute;left:-6px;top:1px;width:11px;height:11px;border-radius:99px;background:#fff;border:2px solid var(--accent)}
-.tl .it.navy::before{border-color:var(--navy)}
-.tl .it b{font-size:13px;color:var(--ink);font-weight:600;display:block}
-.tl .it p{font-size:12px;color:var(--muted);margin-top:2px}
-.tl .it time{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:4px;display:block}
-
-.foot-note{grid-column:span 12;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--faint);padding-top:6px}
-
-/* ---------------- RESPONSIVE ---------------- */
-@media (max-width:1080px){
-  .kpi{grid-column:span 6}
-  .c-hero,.c-donut,.c-skills,.c-side,.c-proj,.c-time{grid-column:span 12}
-}
-@media (max-width:760px){
-  .app{grid-template-columns:1fr}
-  .side{position:static;height:auto;flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 16px}
-  .side-foot,.nav .lbl{display:none}
-  .nav{flex-direction:row;gap:4px}
-  .nav a{padding:8px 11px;white-space:nowrap}
-  .brand{flex:none}
-  .topbar{padding:12px 18px}
-  .tb-date,.chip-user b{display:none}
-  .content{padding:18px 16px 32px}
-  .kpi{grid-column:span 6}
-  .profile .badges{width:100%}
-}
-@media (max-width:460px){.kpi{grid-column:span 12}}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-@media print{
-  .side,.topbar{display:none}
-  body{background:#fff}
-  .card{box-shadow:none;break-inside:avoid}
-}
+  /* ---------- Print ---------- */
+  @media print{
+    @page{size:A4;margin:13mm;}
+    body{background:#fff;padding:0;}
+    .no-print{display:none !important;}
+    .page{max-width:none;width:auto;box-shadow:none;border-radius:0;}
+    .entry,.proj,.block,.skillgroup{break-inside:avoid;}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
 </style>
 </head>
 <body>
-<div class="app">
 
-  <!-- ============ SIDEBAR ============ -->
-  <aside class="side">
-    <div class="brand">
-      <div class="logo">AF</div>
-      <div>
-        <b>Antony Flores</b>
-        <small>Data · Estadística</small>
+<div class="note no-print">
+  <p><strong>Tu CV está listo.</strong> Para tu <strong>foto</strong>, haz clic en el círculo y elige la imagen; luego guarda el PDF enseguida (la foto queda mientras la pestaña esté abierta). Revisa antes de enviar: el cargo y las funciones de cada experiencia son sugerencias típicas de OTI — ajústalas a lo que hiciste. Las dos últimas certificaciones (Cisco) son sugeridas; consíguelas (son gratuitas) antes de presentarlas como obtenidas.</p>
+  <button class="btn" onclick="window.print()">Imprimir / Guardar PDF</button>
+</div>
+
+<div class="page">
+
+  <header>
+    <div class="head-grid">
+      <div class="head-text">
+        <span class="focus">Enfoque · Ciberseguridad y Redes</span>
+        <h1>Antony Jhonatan<br>Flores Nina</h1>
+        <p class="role">Estudiante de Ingeniería Estadística e Informática y de Contabilidad · Técnico en Computación e Informática</p>
       </div>
+      <label class="photo-frame" title="Haz clic para subir tu foto">
+        <img id="fotoImg" class="photo" alt="Foto de Antony Flores" src="foto.jpg">
+        <span class="photo-hint no-print">Subir foto</span>
+        <input type="file" id="fotoInput" accept="image/*">
+      </label>
     </div>
+  </header>
 
-    <nav class="nav">
-      <div class="lbl">Panel</div>
-      <a href="#resumen" class="active"><span class="gl">▣</span>Resumen</a>
-      <a href="#metricas"><span class="gl">∿</span>Métricas</a>
-      <a href="#competencias"><span class="gl">▤</span>Competencias</a>
-      <div class="lbl">Trabajo</div>
-      <a href="#actividad"><span class="gl">◉</span>Actividad</a>
-      <a href="#proyectos"><span class="gl">⌘</span>Proyectos</a>
-      <a href="#linea"><span class="gl">↻</span>Línea de tiempo</a>
-    </nav>
+  <div class="grid">
 
-    <div class="side-foot">
-      <div class="st"><span class="dot"></span>Disponible para proyectos</div>
-      <small>UNA-Puno · VI ciclo · 2026-I</small>
-    </div>
-  </aside>
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="side">
 
-  <!-- ============ MAIN ============ -->
-  <div class="main">
-    <header class="topbar">
-      <div class="crumb">
-        <b>Resumen del perfil</b>
-        <span>panel / resumen</span>
+      <div class="block">
+        <p class="eyebrow">Contacto</p>
+        <ul class="contact">
+          <li><span class="k">@</span><a href="mailto:Antonyjfn@gmail.com">Antonyjfn@gmail.com</a></li>
+          <li><span class="k">T</span><a href="tel:+51935020714">+51 935 020 714</a></li>
+          <li><span class="k">U</span>Puno, Perú</li>
+          <li><span class="k">in</span><a href="https://www.linkedin.com/in/antony-flores-nina" target="_blank" rel="noopener">linkedin.com/in/antony-flores-nina</a></li>
+          <li><span class="k">gh</span><a href="https://github.com/Antony203" target="_blank" rel="noopener">github.com/Antony203</a></li>
+        </ul>
       </div>
-      <div class="tb-right">
-        <span class="tb-date">Puno, Perú</span>
-        <button class="btn" onclick="window.print()">↧ Exportar PDF</button>
-        <div class="chip-user"><span class="av">AF</span><b>A. Flores</b></div>
-      </div>
-    </header>
 
-    <div class="content">
-      <div class="grid">
+      <div class="block">
+        <p class="eyebrow">Habilidades</p>
 
-        <!-- ===== PROFILE HEADER ===== -->
-        <section class="card profile" id="resumen">
-          <div class="pic">AF</div>
-          <div class="id">
-            <h1>Antony Jhonatan Flores Nina</h1>
-            <div class="role">Ingeniero Estadístico e Informático</div>
-            <div class="links">
-              <a href="mailto:antony.flores@example.com">@ antony.flores@example.com</a>
-              <a href="#">in /antony-flores</a>
-              <a href="#">gh /antony-flores</a>
-              <span>◷ Puno, Perú</span>
-            </div>
+        <div class="skillgroup">
+          <h4>Redes y seguridad</h4>
+          <div class="tags">
+            <span class="tag pri">Modelo OSI / TCP-IP</span>
+            <span class="tag pri">Direccionamiento IP</span>
+            <span class="tag pri">Subnetting</span>
+            <span class="tag pri">Redes LAN</span>
+            <span class="tag pri">Fund. ciberseguridad</span>
+            <span class="tag pri">Topologías y dispositivos</span>
           </div>
-          <div class="badges">
-            <div class="badge-card"><b>VI</b><small>Ciclo</small></div>
-            <div class="badge-card"><b>UNA</b><small>Puno</small></div>
-            <div class="badge-card"><b>2023</b><small>Inicio</small></div>
-          </div>
-        </section>
-
-        <!-- ===== KPI CARDS ===== -->
-        <section class="card kpi" id="metricas">
-          <div class="lbl">Proyectos</div>
-          <div class="num">12</div>
-          <div class="foot">
-            <span class="trend up">▲ +3</span>
-            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,20 14,18 26,21 38,13 50,15 62,8 76,4"/></svg>
-          </div>
-        </section>
-        <section class="card kpi">
-          <div class="lbl">Modelos entrenados</div>
-          <div class="num">8</div>
-          <div class="foot">
-            <span class="trend up">▲ +2</span>
-            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,22 14,16 26,18 38,12 50,14 62,7 76,6"/></svg>
-          </div>
-        </section>
-        <section class="card kpi">
-          <div class="lbl">Precisión media</div>
-          <div class="num">97.7<span style="font-size:16px">%</span></div>
-          <div class="foot">
-            <span class="trend up">MAPE 2.29%</span>
-            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,17 14,15 26,16 38,11 50,12 62,9 76,7"/></svg>
-          </div>
-        </section>
-        <section class="card kpi">
-          <div class="lbl">Datasets analizados</div>
-          <div class="num">23</div>
-          <div class="foot">
-            <span class="trend up">▲ +5</span>
-            <svg class="spark" viewBox="0 0 78 26"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="2,21 14,19 26,15 38,16 50,10 62,11 76,5"/></svg>
-          </div>
-        </section>
-
-        <!-- ===== HERO TIME SERIES ===== -->
-        <section class="card c-hero">
-          <div class="card-h">
-            <div>
-              <div class="eyebrow">Series de tiempo · SARIMA</div>
-              <h3 style="margin-top:5px">Pronóstico de incidencias mensuales</h3>
-              <p>Región Puno · observado vs. proyectado con banda de confianza</p>
-            </div>
-          </div>
-          <svg class="hero-svg" viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg">
-            <!-- gridlines -->
-            <g stroke="var(--line-2)" stroke-width="1">
-              <line x1="48" y1="20"  x2="620" y2="20"/>
-              <line x1="48" y1="75"  x2="620" y2="75"/>
-              <line x1="48" y1="130" x2="620" y2="130"/>
-              <line x1="48" y1="185" x2="620" y2="185"/>
-              <line x1="48" y1="240" x2="620" y2="240"/>
-            </g>
-            <!-- y labels -->
-            <g font-family="IBM Plex Mono" font-size="9" fill="var(--faint)">
-              <text x="40" y="23" text-anchor="end">160</text>
-              <text x="40" y="78" text-anchor="end">140</text>
-              <text x="40" y="133" text-anchor="end">120</text>
-              <text x="40" y="188" text-anchor="end">100</text>
-              <text x="40" y="243" text-anchor="end">80</text>
-            </g>
-            <!-- forecast boundary -->
-            <line x1="467" y1="20" x2="467" y2="240" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 3"/>
-            <text x="471" y="32" font-family="IBM Plex Mono" font-size="9" fill="var(--accent)">pronóstico →</text>
-            <!-- confidence band -->
-            <path d="M 467,66 L 506,55 L 544,45 L 582,57 L 620,71 L 620,95 L 582,77 L 544,61 L 506,67 L 467,74 Z" fill="rgba(226,101,78,.13)"/>
-            <!-- observed line -->
-            <path d="M 48,163 L 86,182 L 124,133 L 162,119 L 201,152 L 239,196 L 277,177 L 315,138 L 353,100 L 391,114 L 429,89 L 467,70" fill="none" stroke="var(--navy)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-            <!-- forecast line -->
-            <path d="M 467,70 L 506,61 L 544,53 L 582,67 L 620,83" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="6 5" stroke-linejoin="round" stroke-linecap="round"/>
-            <!-- observed dots -->
-            <g fill="var(--navy)">
-              <circle cx="48" cy="163" r="3"/><circle cx="86" cy="182" r="3"/><circle cx="124" cy="133" r="3"/><circle cx="162" cy="119" r="3"/><circle cx="201" cy="152" r="3"/><circle cx="239" cy="196" r="3"/><circle cx="277" cy="177" r="3"/><circle cx="315" cy="138" r="3"/><circle cx="353" cy="100" r="3"/><circle cx="391" cy="114" r="3"/><circle cx="429" cy="89" r="3"/><circle cx="467" cy="70" r="3"/>
-            </g>
-            <!-- forecast peak marker -->
-            <circle cx="544" cy="53" r="4" fill="#fff" stroke="var(--accent)" stroke-width="2.4"/>
-            <text x="544" y="42" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="var(--accent)">148</text>
-            <!-- x labels -->
-            <g font-family="IBM Plex Mono" font-size="9" fill="var(--faint)" text-anchor="middle">
-              <text x="48" y="258">Ene'26</text>
-              <text x="239" y="258">Jun</text>
-              <text x="429" y="258">Nov</text>
-              <text x="544" y="270">Feb'27</text>
-            </g>
-          </svg>
-          <div class="legend">
-            <div class="li"><span class="sw line" style="background:var(--navy)"></span>Observado (2026)</div>
-            <div class="li"><span class="sw line dash"></span>Pronóstico (2027)</div>
-            <div class="li"><span class="sw" style="background:rgba(226,101,78,.2)"></span>IC 95%</div>
-          </div>
-          <div class="hero-note">Modelo <b>SARIMA(1,0,1)(1,0,0)₁₂</b> · 76 obs. · AIC 6.872 · pico estimado: <b>enero 2027 ≈ 148</b></div>
-        </section>
-
-        <!-- ===== DONUT ===== -->
-        <section class="card c-donut">
-          <div class="card-h"><div><div class="eyebrow">Enfoque</div><h3 style="margin-top:5px">Distribución por área</h3></div></div>
-          <div class="donut-wrap">
-            <svg class="donut-svg" viewBox="0 0 140 140">
-              <g transform="rotate(-90 70 70)" fill="none" stroke-width="17" stroke-linecap="butt">
-                <circle cx="70" cy="70" r="54" stroke="var(--navy)"  stroke-dasharray="116.7 339.3" stroke-dashoffset="0"/>
-                <circle cx="70" cy="70" r="54" stroke="var(--accent)" stroke-dasharray="82.8 339.3"  stroke-dashoffset="-118.7"/>
-                <circle cx="70" cy="70" r="54" stroke="var(--teal)"   stroke-dasharray="65.9 339.3"  stroke-dashoffset="-203.6"/>
-                <circle cx="70" cy="70" r="54" stroke="var(--amber)"  stroke-dasharray="65.9 339.3"  stroke-dashoffset="-271.4"/>
-              </g>
-              <text x="70" y="68" text-anchor="middle" class="donut-center">100%</text>
-              <text x="70" y="82" text-anchor="middle" class="donut-sub">DEDICACIÓN</text>
-            </svg>
-            <div class="donut-list">
-              <div class="row"><span class="dotc" style="background:var(--navy)"></span>Estadística <b>35%</b></div>
-              <div class="row"><span class="dotc" style="background:var(--accent)"></span>Machine Learning <b>25%</b></div>
-              <div class="row"><span class="dotc" style="background:var(--teal)"></span>Bases de datos <b>20%</b></div>
-              <div class="row"><span class="dotc" style="background:var(--amber)"></span>Visualización <b>20%</b></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===== SKILLS ===== -->
-        <section class="card c-skills" id="competencias">
-          <div class="card-h"><div><div class="eyebrow">Stack técnico</div><h3 style="margin-top:5px">Competencias</h3></div></div>
-          <div class="skill"><div class="t"><b>Modelado estadístico</b><em>90%</em></div><div class="track"><i style="width:90%"></i></div></div>
-          <div class="skill"><div class="t"><b>Series de tiempo · SARIMA</b><em>88%</em></div><div class="track"><i style="width:88%"></i></div></div>
-          <div class="skill"><div class="t"><b>Python · R (pandas, scikit-learn)</b><em>85%</em></div><div class="track"><i style="width:85%"></i></div></div>
-          <div class="skill"><div class="t"><b>Excel avanzado</b><em>90%</em></div><div class="track"><i style="width:90%"></i></div></div>
-          <div class="skill"><div class="t"><b>SQL · Bases de datos</b><em>75%</em></div><div class="track"><i style="width:75%"></i></div></div>
-          <div class="skill"><div class="t"><b>Visualización de datos</b><em>80%</em></div><div class="track"><i style="width:80%"></i></div></div>
-          <div class="skill"><div class="t"><b>LaTeX</b><em>85%</em></div><div class="track"><i style="width:85%"></i></div></div>
-        </section>
-
-        <!-- ===== IDIOMAS + HERRAMIENTAS ===== -->
-        <div class="c-side">
-          <section class="card">
-            <div class="card-h"><div><div class="eyebrow">Comunicación</div><h3 style="margin-top:5px">Idiomas</h3></div></div>
-            <div class="lang">
-              <div class="row"><b>Español</b><div class="track"><i style="width:100%"></i></div><em>Nativo</em></div>
-              <div class="row"><b>Inglés</b><div class="track"><i style="width:60%"></i></div><em>Intermedio</em></div>
-              <div class="row"><b>Quechua</b><div class="track"><i style="width:35%"></i></div><em>Básico</em></div>
-            </div>
-          </section>
-          <section class="card">
-            <div class="card-h"><div><div class="eyebrow">Herramientas</div><h3 style="margin-top:5px">Software</h3></div></div>
-            <div class="tools">
-              <span>EViews</span><span>R</span><span>Python</span><span>scikit-learn</span><span>SQL</span><span>Excel</span><span>Jupyter</span><span>LaTeX</span><span>Power BI</span><span>Git</span>
-            </div>
-          </section>
         </div>
 
-        <!-- ===== HEATMAP ===== -->
-        <section class="card c-heat" id="actividad">
-          <div class="card-h"><div><div class="eyebrow">Últimos 6 meses</div><h3 style="margin-top:5px">Actividad de contribuciones</h3></div></div>
-          <div class="heatmap" id="heatmap"></div>
-          <div class="heat-foot">
-            <span class="cnt"><b id="hm-total">—</b> contribuciones registradas</span>
-            <span class="lg">Menos
-              <span class="hm-cell lvl-0"></span><span class="hm-cell lvl-1"></span><span class="hm-cell lvl-2"></span><span class="hm-cell lvl-3"></span><span class="hm-cell lvl-4"></span>
-              Más</span>
+        <div class="skillgroup">
+          <h4>Programación y datos</h4>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">pandas</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">statsmodels</span>
+            <span class="tag">R</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Jupyter</span>
           </div>
-        </section>
+        </div>
 
-        <!-- ===== PROJECTS ===== -->
-        <section class="card c-proj" id="proyectos">
-          <div class="card-h"><div><div class="eyebrow">Portafolio</div><h3 style="margin-top:5px">Proyectos</h3></div></div>
-          <table class="tbl">
-            <thead><tr><th>Proyecto</th><th>Stack</th><th>Métrica</th><th>Estado</th></tr></thead>
-            <tbody>
-              <tr>
-                <td><b>Pronóstico de criminalidad</b><small>Región Puno · 2026</small></td>
-                <td><span class="tg">SARIMA</span><span class="tg">EViews</span></td>
-                <td><span class="metric">MAPE 2.29%</span></td>
-                <td><span class="status done">Completado</span></td>
-              </tr>
-              <tr>
-                <td><b>Regresión múltiple — crudo</b><small>Modelado matricial · 2025</small></td>
-                <td><span class="tg">Excel</span><span class="tg">VIF</span></td>
-                <td><span class="metric">R² 0.94</span></td>
-                <td><span class="status done">Completado</span></td>
-              </tr>
-              <tr>
-                <td><b>Clustering de países</b><small>167 países · K-Means · 2025</small></td>
-                <td><span class="tg">Python</span><span class="tg">sklearn</span></td>
-                <td><span class="metric">Silueta 0.24</span></td>
-                <td><span class="status done">Completado</span></td>
-              </tr>
-              <tr>
-                <td><b>Facturación electrónica</b><small>Modelo de datos · 2024</small></td>
-                <td><span class="tg">SQL</span><span class="tg">CSV/JSON</span></td>
-                <td><span class="metric">+1.2k filas</span></td>
-                <td><span class="status live">En curso</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <!-- ===== TIMELINE ===== -->
-        <section class="card c-time" id="linea">
-          <div class="card-h"><div><div class="eyebrow">Reciente</div><h3 style="margin-top:5px">Línea de tiempo</h3></div></div>
-          <div class="tl">
-            <div class="it">
-              <b>Pronóstico SARIMA actualizado</b>
-              <p>Reajuste del modelo y nueva proyección 2027.</p>
-              <time>hace 2 días</time>
-            </div>
-            <div class="it navy">
-              <b>Regresión del crudo finalizada</b>
-              <p>Diagnóstico VIF, ANOVA y análisis de residuales.</p>
-              <time>hace 1 semana</time>
-            </div>
-            <div class="it">
-              <b>Clustering K-Means (167 países)</b>
-              <p>Segmentación socioeconómica con k = 6.</p>
-              <time>hace 2 semanas</time>
-            </div>
-            <div class="it navy">
-              <b>Documento LaTeX · Modelos Lineales</b>
-              <p>Bandas de confianza con pgfplots.</p>
-              <time>hace 3 semanas</time>
-            </div>
+        <div class="skillgroup">
+          <h4>Análisis y BI</h4>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">EViews</span>
+            <span class="tag">Excel avanzado</span>
+            <span class="tag">LaTeX</span>
           </div>
-        </section>
+        </div>
 
-        <div class="foot-note">Panel de perfil · datos de demostración · diseñado para Antony J. Flores Nina</div>
+        <div class="skillgroup">
+          <h4>Desarrollo web</h4>
+          <div class="tags">
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+
+        <div class="skillgroup">
+          <h4>Soporte y sistemas</h4>
+          <div class="tags">
+            <span class="tag">Soporte técnico</span>
+            <span class="tag">Mant. de equipos</span>
+            <span class="tag">SIAF</span>
+            <span class="tag">SIGA</span>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="block">
+        <p class="eyebrow">Certificaciones</p>
+        <ul class="certlist">
+          <li>
+            <div class="ct">Curso Técnico de Pentesting, Ethical Hacking y Seguridad Ofensiva</div>
+            <div class="cmeta"><span class="cent">INICTEL-UNI</span> · <span class="cy">2026</span></div>
+          </li>
+          <li>
+            <div class="ct">Ciberseguridad Industrial</div>
+            <div class="cmeta"><span class="cent">INICTEL-UNI</span> · <span class="cy">2021</span></div>
+          </li>
+          <li>
+            <div class="ct">CCNA Cybersecurity Operations — CyberOps Associate</div>
+            <div class="cmeta"><span class="cent">Sistemas UNI</span> · <span class="cy">Cisco</span></div>
+          </li>
+          <li>
+            <div class="ct">Introduction to Cybersecurity</div>
+            <div class="cmeta"><span class="cent">Cisco Networking Academy</span> · <span class="cy">2025</span></div>
+          </li>
+          <li>
+            <div class="ct">Networking Basics</div>
+            <div class="cmeta"><span class="cent">Cisco Networking Academy</span> · <span class="cy">2024</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow">Idiomas</p>
+        <ul class="lang">
+          <li><span>Español</span><span class="lvl">Nativo</span></li>
+          <li><span>Inglés</span><span class="lvl">Básico (en estudio)</span></li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- ===================== MAIN ===================== -->
+    <main class="main">
+
+      <div class="block">
+        <p class="eyebrow">Perfil profesional</p>
+        <p class="profile">Estudiante universitario de Ingeniería Estadística e Informática (UNA-Puno) y de Contabilidad, con formación técnica en Computación e Informática. Combino una base práctica en soporte técnico y redes —modelo OSI/TCP-IP, direccionamiento y subnetting— con experiencia en oficinas de tecnología de la información (OTI) en el ámbito municipal, respaldada por formación certificada en pentesting, ethical hacking y operaciones de ciberseguridad (CyberOps). Mi objetivo es desarrollarme profesionalmente en ciberseguridad y redes, apoyándome en el pensamiento analítico que he construido en programación y análisis de datos (Python, SQL, Power BI).</p>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow">Formación académica</p>
+
+        <div class="entry">
+          <div class="top">
+            <span class="title">Ingeniería Estadística e Informática</span>
+            <span class="when">En curso · 6.º sem.</span>
+          </div>
+          <div class="org">Universidad Nacional del Altiplano (UNA) — Puno</div>
+          <div class="meta">Modelado estadístico, series de tiempo, machine learning, redes de computadoras.</div>
+        </div>
+
+        <div class="entry">
+          <div class="top">
+            <span class="title">Contabilidad</span>
+            <span class="when">En curso</span>
+          </div>
+          <div class="org">Universidad Continental</div>
+        </div>
+
+        <div class="entry">
+          <div class="top">
+            <span class="title">Técnico en Computación e Informática</span>
+            <span class="when">2021 – 2023</span>
+          </div>
+          <div class="org">IESTP «José Antonio Encinas» (JAE) — Puno</div>
+          <div class="meta">Egresado. Soporte de hardware/software, redes y ofimática.</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow">Experiencia laboral</p>
+
+        <div class="entry">
+          <div class="top">
+            <span class="title">Asistente de Soporte Técnico y Redes — Oficina de Tecnologías de la Información (OTI)</span>
+            <span class="when">2025</span>
+          </div>
+          <div class="org">Municipalidad Distrital de Ácora</div>
+          <ul>
+            <li>Mantenimiento de equipos de cómputo, impresoras y configuración de equipos de red.</li>
+            <li>Apoyo en la actualización de contenidos del portal de transparencia / página web institucional.</li>
+            <li>Atención y resolución de incidencias técnicas reportadas por las distintas áreas.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="top">
+            <span class="title">Asistente de Soporte Técnico y Redes — Oficina de Tecnologías de la Información (OTI)</span>
+            <span class="when">2024</span>
+          </div>
+          <div class="org">Municipalidad Distrital de Platería</div>
+          <ul>
+            <li>Instalación y configuración de software y equipos de cómputo del personal.</li>
+            <li>Soporte en conectividad de red e internet de las oficinas.</li>
+            <li>Acompañamiento a usuarios en el uso de sistemas y herramientas ofimáticas.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="top">
+            <span class="title">Asistente de Soporte Técnico y Redes — Oficina de Tecnologías de la Información (OTI)</span>
+            <span class="when">2023</span>
+          </div>
+          <div class="org">Municipalidad Provincial de Puno</div>
+          <ul>
+            <li>Soporte técnico a usuarios: instalación, configuración y mantenimiento preventivo y correctivo de equipos de cómputo y periféricos.</li>
+            <li>Administración y monitoreo de la red de datos (LAN), conectividad e internet de las áreas de la entidad.</li>
+            <li>Respaldo (backup) de información y apoyo en sistemas administrativos del Estado (SIAF, SIGA).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow">Proyectos destacados</p>
+
+        <div class="proj">
+          <div class="pt">Dashboard de Arquitectura de Redes<span class="stack">HTML · JS</span></div>
+          <div class="pd">Aplicación web de página única sobre modelos OSI y TCP/IP, topologías y dispositivos de red, con una calculadora interactiva de subneteo (subredes IP).</div>
+        </div>
+
+        <div class="proj">
+          <div class="pt">Sistema de Facturación Electrónica<span class="stack">React · Vite · Supabase</span></div>
+          <div class="pd">Aplicación web full-stack con generación de comprobantes en PDF, verificación por código QR y control de acceso por roles.</div>
+        </div>
+
+        <div class="proj">
+          <div class="pt">Sistema Integrado de Gestión Municipal<span class="stack">Soporte · Implementación</span></div>
+          <div class="pd">Apoyo en la implementación, configuración y soporte del sistema que integra los procesos administrativos de la municipalidad (rentas, trámites y atención al ciudadano), además de la capacitación a usuarios de las distintas áreas.</div>
+        </div>
+
+        <div class="proj">
+          <div class="pt">Sistema de Trámite Documentario<span class="stack">Soporte · Operación</span></div>
+          <div class="pd">Soporte en el despliegue y operación de la plataforma de registro, derivación y seguimiento de expedientes, asegurando el flujo correcto de documentos y atendiendo las incidencias de los usuarios.</div>
+        </div>
+
+        <div class="proj">
+          <div class="pt">Modelos predictivos y análisis de datos<span class="stack">Python · R · EViews</span></div>
+          <div class="pd">Pronóstico de series de tiempo (SARIMA) y segmentación con aprendizaje no supervisado (K-Means y clustering jerárquico) sobre conjuntos de datos reales.</div>
+        </div>
+      </div>
+
+    </main>
   </div>
 </div>
 
 <script>
-(function(){
-  // ---- Contribution heatmap ----
-  var hm = document.getElementById('heatmap');
-  if(hm){
-    var weeks = 26, days = 7, total = 0;
-    for(var w=0; w<weeks; w++){
-      var col = document.createElement('div');
-      col.className = 'hm-col';
-      for(var d=0; d<days; d++){
-        var c = document.createElement('span');
-        var r = Math.random();
-        var lvl = r<0.42 ? 0 : r<0.66 ? 1 : r<0.84 ? 2 : r<0.95 ? 3 : 4;
-        if((d===0 || d===6) && lvl>0 && Math.random()<0.5) lvl--;
-        c.className = 'hm-cell lvl-' + lvl;
-        total += lvl;
-        col.appendChild(c);
-      }
-      hm.appendChild(col);
-    }
-    var t = document.getElementById('hm-total');
-    if(t) t.textContent = total * 4 + 96;
-  }
-
-  // ---- Sidebar active state ----
-  var links = document.querySelectorAll('.nav a');
-  links.forEach(function(a){
-    a.addEventListener('click', function(){
-      links.forEach(function(x){ x.classList.remove('active'); });
-      a.classList.add('active');
+  (function(){
+    var input = document.getElementById('fotoInput');
+    var img = document.getElementById('fotoImg');
+    var hint = document.querySelector('.photo-hint');
+    if(!input) return;
+    input.addEventListener('change', function(e){
+      var file = e.target.files && e.target.files[0];
+      if(!file) return;
+      var reader = new FileReader();
+      reader.onload = function(ev){
+        img.src = ev.target.result;
+        if(hint) hint.style.display = 'none';
+      };
+      reader.readAsDataURL(file);
     });
-  });
-})();
+  })();
 </script>
+
 </body>
 </html>
