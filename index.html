@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CV — Antony Jhonatan Flores Nina</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --ink:#161a23;
@@ -70,6 +71,36 @@
   }
   .btn:hover{background:#173d5e;}
   .btn:focus-visible{outline:3px solid #9ec1e6;outline-offset:2px;}
+
+  /* ---------- Print toolbar ---------- */
+  .print-toolbar{
+    max-width:880px;
+    margin:0 auto 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    background:#ffffff;
+    border:1px solid #d8dee8;
+    border-radius:8px;
+    padding:10px 14px;
+    box-shadow:0 4px 16px rgba(20,26,35,.08);
+    color:var(--muted);
+    font-size:12px;
+  }
+  .print-btn{
+    border:0;
+    border-radius:7px;
+    padding:10px 16px;
+    background:var(--accent);
+    color:#fff;
+    font-family:var(--sans);
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .print-btn:hover{background:#173d5e;}
+  .print-btn:focus-visible{outline:3px solid #9ec1e6;outline-offset:2px;}
 
   /* ---------- Page ---------- */
   .page{
@@ -327,264 +358,485 @@
 
   /* ---------- Print ---------- */
   @media print{
-    @page{size:A4;margin:13mm;}
-    body{background:#fff;padding:0;}
+    @page{
+      size:A4 portrait;
+      margin:8mm;
+    }
+
+    html,body{
+      width:100%;
+      margin:0 !important;
+      padding:0 !important;
+      background:#fff !important;
+    }
+
+    body{
+      font-size:10.2pt;
+      line-height:1.35;
+    }
+
     .no-print{display:none !important;}
-    .page{max-width:none;width:auto;box-shadow:none;border-radius:0;}
-    .entry,.proj,.block,.skillgroup{break-inside:avoid;}
-    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+    .page{
+      width:194mm;
+      max-width:194mm;
+      margin:0 auto;
+      box-shadow:none !important;
+      border-radius:0;
+      overflow:visible;
+    }
+
+    header{padding:10mm 10mm 6mm;}
+    .side{padding:7mm 6mm 9mm;}
+    .main{padding:7mm 8mm 9mm;}
+
+    h1{font-size:24pt;}
+    .role{font-size:10.5pt;}
+    .focus{font-size:8pt;}
+    .eyebrow{font-size:8pt;margin-bottom:8px;}
+    .profile{font-size:9.4pt;}
+    .entry .title{font-size:9.7pt;}
+    .entry .org{font-size:9pt;}
+    .entry .meta,.entry ul,.proj .pd,.contact,.lang{font-size:8.6pt;}
+    .entry .when,.tag,.certlist .cy{font-size:7.5pt;}
+    .certlist .ct{font-size:8.4pt;}
+    .certlist .cmeta{font-size:7.8pt;}
+    .photo-frame{width:26mm;height:26mm;}
+
+    .block{margin-bottom:15px;}
+    .entry{padding-bottom:11px;}
+    .proj{margin-bottom:9px;}
+
+    .entry,.proj,.skillgroup,.certlist li{
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+
+    h1,h2,h3,.eyebrow,.entry .top{
+      break-after:avoid;
+      page-break-after:avoid;
+    }
+
+    a{color:inherit !important;text-decoration:none !important;}
+
+    *{
+      -webkit-print-color-adjust:exact !important;
+      print-color-adjust:exact !important;
+    }
+  }
+
+
+  /* ---------- Additional compact sections ---------- */
+  .mini-list{list-style:none;margin:0;padding:0;}
+  .mini-list li{margin-bottom:10px;padding-left:10px;border-left:2px solid var(--accent-soft);}
+  .mini-list li:last-child{margin-bottom:0;}
+  .mini-list strong{display:block;font-size:12px;line-height:1.3;color:var(--ink);}
+  .mini-list span{display:block;margin-top:2px;font-size:10.8px;line-height:1.35;color:var(--soft);}
+  .achievement{padding:13px 15px;background:#f7f9fc;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;}
+  .achievement-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;}
+  .achievement-title{font-size:14px;font-weight:600;line-height:1.35;}
+  .achievement .org{font-size:12.5px;color:var(--accent);font-weight:500;margin-top:4px;}
+  .achievement p{font-size:12.8px;color:#3a4250;margin:7px 0 0;}
+
+  @media print{
+    .mini-list strong{font-size:8.2pt;}
+    .mini-list span{font-size:7.3pt;}
+    .achievement{padding:8px 10px;}
+    .achievement-title{font-size:9.2pt;}
+    .achievement .org{font-size:8.2pt;}
+    .achievement p{font-size:8.4pt;}
+    .compact-block{margin-bottom:12px;}
+  }
+
+
+  /* ---------- Deliberate second CV page ---------- */
+  .page + .page{margin-top:24px;}
+  .page-two{overflow:hidden;}
+  .page-two-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:20px;
+    padding:28px 38px 20px;
+    border-bottom:1px solid var(--line);
+  }
+  .page-two-head .focus{margin-bottom:9px;}
+  .page-two-head h2{
+    margin:0;
+    font-family:var(--display);
+    font-size:25px;
+    line-height:1.1;
+    letter-spacing:-.01em;
+  }
+  .page-two-label{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.10em;
+    text-transform:uppercase;
+    color:var(--soft);
+    text-align:right;
+  }
+  .page-two-content{padding:24px 38px 32px;}
+  .credential-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px 14px;
+  }
+  .credential{
+    border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    border-radius:5px;
+    padding:10px 12px;
+    break-inside:avoid;
+  }
+  .credential h3,.training h3,.project-card h3{
+    margin:0;
+    font-family:var(--sans);
+    font-size:12.5px;
+    line-height:1.32;
+    color:var(--ink);
+  }
+  .credential p{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:flex-end;
+    margin:6px 0 0;
+    font-size:10.8px;
+    line-height:1.3;
+    color:var(--accent);
+  }
+  .credential p strong{font-weight:500;}
+  .credential p span{flex:0 0 auto;font-family:var(--mono);font-size:9.7px;color:var(--soft);}
+  .training-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+  .training{
+    background:#f7f9fc;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:11px 12px;
+    break-inside:avoid;
+  }
+  .training p{font-size:10.8px;line-height:1.35;color:#3a4250;margin:6px 0;}
+  .training span{font-family:var(--mono);font-size:9.5px;color:var(--soft);}
+  .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+  .project-card{
+    border-top:3px solid var(--accent);
+    background:#f7f9fc;
+    padding:11px 12px;
+    break-inside:avoid;
+  }
+  .project-card > span{display:block;margin-top:5px;font-family:var(--mono);font-size:9.5px;color:var(--accent);}
+  .project-card p{font-size:10.8px;line-height:1.38;color:#3a4250;margin:7px 0 0;}
+
+  @media (max-width:640px){
+    .page-two-head{align-items:flex-start;flex-direction:column;padding:24px;}
+    .page-two-label{text-align:left;}
+    .page-two-content{padding:22px;}
+    .credential-grid,.training-grid,.project-grid{grid-template-columns:1fr;}
+  }
+
+  @media print{
+    .page:first-of-type{break-after:page;page-break-after:always;}
+    .page + .page{margin-top:0;}
+    .page-two{width:194mm;max-width:194mm;min-height:281mm;}
+    .page-two-head{padding:5.5mm 9mm 3.5mm;}
+    .page-two-head h2{font-size:15.5pt;}
+    .page-two-head .focus{font-size:6.8pt;margin-bottom:1.5mm;}
+    .page-two-label{font-size:6.6pt;}
+    .page-two-content{padding:4mm 9mm 5mm;}
+    .page-two .block{margin-bottom:3mm;}
+    .page-two .eyebrow{font-size:7.2pt;margin-bottom:1.8mm;}
+
+    .achievement{padding:1.8mm 2.2mm;}
+    .achievement-title{font-size:8.2pt;}
+    .achievement .org{font-size:7.2pt;margin-top:.6mm;}
+    .achievement p{font-size:7.25pt;line-height:1.28;margin-top:1mm;}
+
+    .credential-grid{gap:1.7mm 2.5mm;}
+    .credential{padding:1.55mm 2mm;}
+    .credential h3{font-size:7.6pt;line-height:1.23;}
+    .credential p{font-size:6.45pt;margin-top:.8mm;line-height:1.18;}
+    .credential p span{font-size:5.95pt;}
+
+    .training-grid{gap:2.2mm;}
+    .training{padding:1.55mm 1.9mm;}
+    .training h3{font-size:7.15pt;line-height:1.2;}
+    .training p{font-size:6.15pt;line-height:1.22;margin:.8mm 0;}
+    .training span{font-size:5.8pt;}
+
+    .project-grid{gap:1.8mm 2.4mm;}
+    .project-card{padding:1.65mm 2.1mm;}
+    .project-card h3{font-size:7.2pt;line-height:1.2;}
+    .project-card p{font-size:6.15pt;line-height:1.22;margin-top:.8mm;}
+    .project-card > span{font-size:5.7pt;margin-top:.7mm;}
+    .projects-block{margin-bottom:0 !important;}
   }
 </style>
 </head>
 <body>
-
+<div class="print-toolbar no-print">
+<button class="print-btn" onclick="window.print()" type="button">Imprimir / Guardar en PDF</button>
+<span>Formato optimizado para papel A4</span>
+</div>
 <div class="page">
-
-  <header>
-    <div class="head-grid">
-      <div class="head-text">
-        <span class="focus">Enfoque · Ciberseguridad y Redes</span>
-        <h1>Antony Jhonatan<br>Flores Nina</h1>
-        <p class="role">Estudiante de Ingeniería Estadística e Informática y de Contabilidad · Técnico en Computación e Informática</p>
-      </div>
-      <label class="photo-frame" title="Haz clic para subir tu foto">
-        <img id="fotoImg" class="photo" alt="Foto de Antony Flores" src="foto.jpg">
-      </label>
-    </div>
-  </header>
-
-  <div class="grid">
-
-    <!-- ===================== SIDEBAR ===================== -->
-    <aside class="side">
-
-      <div class="block">
-        <p class="eyebrow">Contacto</p>
-        <ul class="contact">
-          <li><span class="k">@</span><a href="mailto:Antonyjfn@gmail.com">Antonyjfn@gmail.com</a></li>
-          <li><span class="k">T</span><a href="tel:+51935020714">+51 935 020 714</a></li>
-          <li><span class="k">U</span>Puno, Perú</li>
-          <li><span class="k">in</span><a href="https://www.linkedin.com/in/antony-flores-nina" target="_blank" rel="noopener">linkedin.com/in/antony-flores-nina</a></li>
-          <li><span class="k">gh</span><a href="https://github.com/Antony203" target="_blank" rel="noopener">github.com/Antony203</a></li>
-        </ul>
-      </div>
-
-      <div class="block">
-        <p class="eyebrow">Habilidades</p>
-
-        <div class="skillgroup">
-          <h4>Redes y seguridad</h4>
-          <div class="tags">
-            <span class="tag pri">Modelo OSI / TCP-IP</span>
-            <span class="tag pri">Direccionamiento IP</span>
-            <span class="tag pri">Subnetting</span>
-            <span class="tag pri">Redes LAN</span>
-            <span class="tag pri">Fund. ciberseguridad</span>
-            <span class="tag pri">Topologías y dispositivos</span>
-          </div>
-        </div>
-
-        <div class="skillgroup">
-          <h4>Programación y datos</h4>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">pandas</span>
-            <span class="tag">scikit-learn</span>
-            <span class="tag">statsmodels</span>
-            <span class="tag">R</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Jupyter</span>
-          </div>
-        </div>
-
-        <div class="skillgroup">
-          <h4>Análisis y BI</h4>
-          <div class="tags">
-            <span class="tag">Power BI</span>
-            <span class="tag">EViews</span>
-            <span class="tag">Excel Intermedio</span>
-            <span class="tag">LaTeX</span>
-          </div>
-        </div>
-
-        <div class="skillgroup">
-          <h4>Desarrollo web</h4>
-          <div class="tags">
-            <span class="tag">HTML / CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">React</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Git</span>
-          </div>
-        </div>
-
-        <div class="skillgroup">
-          <h4>Soporte y sistemas</h4>
-          <div class="tags">
-            <span class="tag">Soporte técnico</span>
-            <span class="tag">Mant. de equipos</span>
-            <span class="tag">SIAF</span>
-            <span class="tag">SIGA</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="block">
-        <p class="eyebrow">Certificaciones</p>
-        <ul class="certlist">
-          <li>
-            <div class="ct">Curso Técnico de Pentesting, Ethical Hacking y Seguridad Ofensiva</div>
-            <div class="cmeta"><span class="cent">INICTEL-UNI</span> · <span class="cy">2026</span></div>
-          </li>
-          <li>
-            <div class="ct">Seguridad de Redes</div>
-            <div class="cmeta"><span class="cent">INICTEL-UNI</span> · <span class="cy">2024</span></div>
-          </li>
-          <li>
-            <div class="ct">CCNA Cybersecurity Operations — CyberOps Associate</div>
-            <div class="cmeta"><span class="cent">Sistemas UNI</span> · <span class="cy">Cisco</span></div>
-          </li>
-          <li>
-            <div class="ct">Introduction to Cybersecurity</div>
-            <div class="cmeta"><span class="cent">Cisco Networking Academy</span> · <span class="cy">2025</span></div>
-          </li>
-          <li>
-            <div class="ct">Networking Basics</div>
-            <div class="cmeta"><span class="cent">Cisco Networking Academy</span> · <span class="cy">2024</span></div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="block">
-        <p class="eyebrow">Idiomas</p>
-        <ul class="lang">
-          <li><span>Español</span><span class="lvl">Nativo</span></li>
-          <li><span>Inglés</span><span class="lvl">Básico A2</span></li>
-        </ul>
-      </div>
-
-    </aside>
-
-    <!-- ===================== MAIN ===================== -->
-    <main class="main">
-
-      <div class="block">
-        <p class="eyebrow">Perfil profesional</p>
-        <p class="profile">Estudiante universitario de Ingeniería Estadística e Informática (UNA-Puno) y de Contabilidad, con formación técnica en Computación e Informática. Combino una base práctica en soporte técnico y redes —modelo OSI/TCP-IP, direccionamiento y subnetting— con experiencia en oficinas de tecnología de la información (OTI) en el ámbito municipal, respaldada por formación certificada en pentesting, ethical hacking y operaciones de ciberseguridad (CyberOps). Mi objetivo es desarrollarme profesionalmente en ciberseguridad y redes, apoyándome en el pensamiento analítico que he construido en programación y análisis de datos (Python, SQL, Power BI).</p>
-      </div>
-
-      <div class="block">
-        <p class="eyebrow">Formación académica</p>
-
-        <div class="entry">
-          <div class="top">
-            <span class="title">Ingeniería Estadística e Informática</span>
-            <span class="when">2023 - Actualidad</span>
-          </div>
-          <div class="org">Universidad Nacional del Altiplano (UNA) — Puno</div>
-          <div class="meta">Modelado estadístico, series de tiempo, machine learning, redes de computadoras.</div>
-        </div>
-
-        <div class="entry">
-          <div class="top">
-            <span class="title">Contabilidad</span>
-            <span class="when">2025 - Actualidad</span>
-          </div>
-          <div class="org">Universidad Continental</div>
-        </div>
-
-        <div class="entry">
-          <div class="top">
-            <span class="title">Técnico en Computación e Informática</span>
-            <span class="when">2021 – 2023</span>
-          </div>
-          <div class="org">IESTP «José Antonio Encinas» (JAE) — Puno</div>
-          <div class="meta">Egresado. Computacion e Informática.</div>
-        </div>
-      </div>
-
-      <div class="block">
-        <p class="eyebrow">Experiencia laboral</p>
-
-        <div class="entry">
-          <div class="top">
-            <span class="title">Asistente de Soporte Técnico y Redes — Oficina de Tecnologías de la Información (OTI)</span>
-            <span class="when">2025</span>
-          </div>
-          <div class="org">Municipalidad Distrital de Ácora</div>
-          <ul>
-            <li>Mantenimiento de equipos de cómputo, impresoras y configuración de equipos de red.</li>
-            <li>Apoyo en la actualización de contenidos del portal de transparencia / página web institucional.</li>
-            <li>Atención y resolución de incidencias técnicas reportadas por las distintas áreas.</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <div class="top">
-            <span class="title">Asistente de Soporte Técnico y Redes — Oficina de Tecnologías de la Información (OTI)</span>
-            <span class="when">2024</span>
-          </div>
-          <div class="org">Municipalidad Distrital de Platería</div>
-          <ul>
-            <li>Instalación y configuración de software y equipos de cómputo del personal.</li>
-            <li>Soporte en conectividad de red e internet de las oficinas.</li>
-            <li>Acompañamiento a usuarios en el uso de sistemas y herramientas ofimáticas.</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <div class="top">
-            <span class="title">Asistente de Soporte Técnico y Redes — Oficina de Tecnologías de la Información (OTI)</span>
-            <span class="when">2023</span>
-          </div>
-          <div class="org">Municipalidad Provincial de Puno</div>
-          <ul>
-            <li>Soporte técnico a usuarios: instalación, configuración y mantenimiento preventivo y correctivo de equipos de cómputo y periféricos.</li>
-            <li>Administración y monitoreo de la red de datos (LAN), conectividad e internet de las áreas de la entidad.</li>
-            <li>Respaldo (backup) de información y apoyo en sistemas administrativos del Estado (SIAF, SIGA).</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="block">
-        <p class="eyebrow">Proyectos destacados</p>
-
-        <div class="proj">
-          <div class="pt">Dashboard de Arquitectura de Redes<span class="stack">HTML · JS</span></div>
-          <div class="pd">Aplicación web de página única sobre modelos OSI y TCP/IP, topologías y dispositivos de red, con una calculadora interactiva de subneteo (subredes IP).</div>
-        </div>
-
-        <div class="proj">
-          <div class="pt">Sistema de Facturación Electrónica<span class="stack">React · Vite · Supabase</span></div>
-          <div class="pd">Aplicación web full-stack con generación de comprobantes en PDF, verificación por código QR y control de acceso por roles.</div>
-        </div>
-
-        <div class="proj">
-          <div class="pt">Sistema Integrado de Gestión Municipal<span class="stack">Soporte · Implementación</span></div>
-          <div class="pd">Apoyo en la implementación, configuración y soporte del sistema que integra los procesos administrativos de la municipalidad (rentas, trámites y atención al ciudadano), además de la capacitación a usuarios de las distintas áreas.</div>
-        </div>
-
-        <div class="proj">
-          <div class="pt">Sistema de Trámite Documentario<span class="stack">Soporte · Operación</span></div>
-          <div class="pd">Soporte en el despliegue y operación de la plataforma de registro, derivación y seguimiento de expedientes, asegurando el flujo correcto de documentos y atendiendo las incidencias de los usuarios.</div>
-        </div>
-
-        <div class="proj">
-          <div class="pt">Modelos predictivos y análisis de datos<span class="stack">Python · R · EViews</span></div>
-          <div class="pd">Pronóstico de series de tiempo (SARIMA) y segmentación con aprendizaje no supervisado (K-Means y clustering jerárquico) sobre conjuntos de datos reales.</div>
-        </div>
-      </div>
-
-    </main>
-  </div>
+<header>
+<div class="head-grid">
+<div class="head-text">
+<span class="focus">Computación e Informática · Soporte · Sistemas · Redes</span>
+<h1>Antony Jhonatan<br/>Flores Nina</h1>
+<p class="role">Egresado técnico en Computación e Informática · Estudiante de Ingeniería Estadística e Informática</p>
+</div>
+<label class="photo-frame" title="Haz clic para subir tu foto">
+<img alt="Foto de Antony Flores" class="photo" id="fotoImg" src="foto.jpg"/>
+<span class="photo-hint">Cambiar foto</span>
+<input accept="image/*" id="fotoInput" type="file"/>
+</label>
+</div>
+</header>
+<div class="grid">
+<!-- ===================== SIDEBAR ===================== -->
+<aside class="side">
+<div class="block">
+<p class="eyebrow">Contacto</p>
+<ul class="contact">
+<li><span class="k">@</span><a href="mailto:Antonyjfn@gmail.com">Antonyjfn@gmail.com</a></li>
+<li><span class="k">T</span><a href="tel:+51935020714">+51 935 020 714</a></li>
+<li><span class="k">U</span>Puno, Perú</li>
+<li><span class="k">in</span><a href="https://www.linkedin.com/in/antony-flores-nina" rel="noopener" target="_blank">www.linkedin.com/in/antony-jhonatan-flores-nina-947328425</a></li>
+<li><span class="k">gh</span><a href="https://github.com/Antony203" rel="noopener" target="_blank">github.com/Antony203</a></li>
+</ul>
+</div>
+<div class="block">
+<p class="eyebrow">Competencias técnicas</p>
+<div class="skillgroup">
+<h4>Soporte e infraestructura</h4>
+<div class="tags">
+<span class="tag pri">Soporte técnico</span>
+<span class="tag pri">Mantenimiento de equipos</span>
+<span class="tag pri">Sistemas operativos</span>
+<span class="tag pri">Redes LAN</span>
+<span class="tag pri">Direccionamiento IP</span>
+<span class="tag pri">Subnetting</span>
+<span class="tag pri">Seguridad informática</span>
+</div>
+</div>
+<div class="skillgroup">
+<h4>Programación y datos</h4>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">R</span>
+<span class="tag">SQL</span>
+<span class="tag">pandas</span>
+<span class="tag">Power BI</span>
+<span class="tag">EViews</span>
+</div>
+</div>
+<div class="skillgroup">
+<h4>Desarrollo y productividad</h4>
+<div class="tags">
+<span class="tag">HTML / CSS</span>
+<span class="tag">JavaScript</span>
+<span class="tag">React</span>
+<span class="tag">Supabase</span>
+<span class="tag">Git</span>
+<span class="tag">Excel</span>
+<span class="tag">LaTeX</span>
+</div>
+</div>
 </div>
 
+<div class="block">
+<p class="eyebrow">Idiomas</p>
+<ul class="lang">
+<li><span>Español</span><span class="lvl">Nativo</span></li>
+<li><span>Inglés</span><span class="lvl">Básico acreditado</span></li>
+</ul>
+</div>
+</aside>
+<!-- ===================== MAIN ===================== -->
+<main class="main">
+<div class="block">
+<p class="eyebrow">Perfil profesional</p>
+<p class="profile">Egresado técnico en Computación e Informática y estudiante de Ingeniería Estadística e Informática en la Universidad Nacional del Altiplano. Poseo experiencia preprofesional en infraestructura de tecnologías de la información, soporte técnico, seguridad, desarrollo de software y gestión de bases de datos. Mi formación se complementa con conocimientos de redes, programación, análisis de datos, desarrollo web y ciberseguridad, lo que me permite adaptarme a distintas funciones del área de computación e informática.</p>
+</div>
+<div class="block">
+<p class="eyebrow">Formación académica</p>
+<div class="entry">
+<div class="top">
+<span class="title">Ingeniería Estadística e Informática</span>
+<span class="when">2023 – Actualidad</span>
+</div>
+<div class="org">Universidad Nacional del Altiplano — Puno</div>
+<div class="meta">Formación universitaria en informática, programación, estadística, análisis de datos y redes de computadoras.</div>
+</div>
+<div class="entry">
+<div class="top">
+<span class="title">Computación e Informática</span>
+<span class="when">2021 – 2023</span>
+</div>
+<div class="org">IESTP «José Antonio Encinas» — Puno</div>
+<div class="meta"><strong>Egresado técnico.</strong> Formación en soporte, infraestructura tecnológica, desarrollo de software, bases de datos y servicios de tecnologías de la información.</div>
+</div>
+</div>
+<div class="block">
+<p class="eyebrow">Experiencia preprofesional</p>
+<div class="entry">
+<div class="top">
+<span class="title">Asistente de Infraestructura de Tecnologías de la Información</span>
+<span class="when">05 feb. – 14 mar. 2025</span>
+</div>
+<div class="org">Constructora &amp; Consultora REALMA E.I.R.L. — Juliaca</div>
+<div class="meta">Prácticas preprofesionales · 296 horas</div>
+<ul>
+<li>Desarrollo de prácticas en el cargo de Asistente de Infraestructura de Tecnologías de la Información.</li>
+<li>Formación práctica vinculada al módulo «Gestión de Aplicaciones para Internet y Producción Multimedia».</li>
+</ul>
+</div>
+<div class="entry">
+<div class="top">
+<span class="title">Practicante de Computación e Informática</span>
+<span class="when">13 feb. – 07 jun. 2023</span>
+</div>
+<div class="org">Municipalidad Distrital de Platería</div>
+<div class="meta">Subgerencia de Desarrollo Social y Servicios Municipales · 555 horas</div>
+<ul>
+<li>Módulo I: «Gestión de Soporte Técnico, Seguridad y Tecnologías de la Información y Comunicación» — 265 horas.</li>
+<li>Módulo II: «Desarrollo de Software y Gestión de Base de Datos» — 290 horas.</li>
+</ul>
+</div>
+</div>
+
+</main>
+</div>
+</div><div class="page page-two">
+<div class="page-two-head">
+<div>
+<span class="focus">Trayectoria académica y técnica</span>
+<h2>Antony Jhonatan Flores Nina</h2>
+</div>
+<div class="page-two-label">Certificaciones · Reconocimientos · Proyectos</div>
+</div>
+<div class="page-two-content">
+<div class="block">
+<p class="eyebrow">Reconocimientos e investigación</p>
+<div class="achievement">
+<div class="achievement-top">
+<span class="achievement-title">Participación destacada en el Semillero de Investigación «Raíz y Resultados»</span>
+<span class="when">2026</span>
+</div>
+<div class="org">Universidad Nacional del Altiplano — Facultad de Ingeniería Estadística e Informática</div>
+<p>Reconocimiento por el proyecto «Modelos de aprendizaje automático para la predicción de la temperatura media mensual».</p>
+</div>
+</div>
+<div class="block">
+<p class="eyebrow">Certificaciones y cursos técnicos</p>
+<div class="credential-grid">
+<article class="credential">
+<h3>Curso Técnico de Pentesting, Ethical Hacking y Seguridad Ofensiva</h3>
+<p><strong>INICTEL-UNI</strong><span>2026</span></p>
+</article>
+<article class="credential">
+<h3>CCNA Cybersecurity Operations — CyberOps Associate</h3>
+<p><strong>Cisco / Sistemas UNI</strong></p>
+</article>
+<article class="credential">
+<h3>Introduction to Cybersecurity</h3>
+<p><strong>Cisco Networking Academy</strong><span>2025</span></p>
+</article>
+<article class="credential">
+<h3>Seguridad de Redes</h3>
+<p><strong>INICTEL-UNI</strong><span>2024</span></p>
+</article>
+<article class="credential">
+<h3>Networking Basics</h3>
+<p><strong>Cisco Networking Academy</strong><span>2024</span></p>
+</article>
+<article class="credential">
+<h3>Mantenimiento, Reparación, Ensamblaje de Computadoras y Administración de Redes</h3>
+<p><strong>IESTP José Domingo Choquehuanca / Fiber Optic Technology / Grupo Energon Technology</strong><span>2022 · 200 h</span></p>
+</article>
+<article class="credential">
+<h3>Arquitectura de Plataformas y Servicios de Tecnologías de la Información</h3>
+<p><strong>IESTP José Domingo Choquehuanca / UNITEK Juliaca</strong><span>2022 · 200 h</span></p>
+</article>
+<article class="credential">
+<h3>Desarrollo de Sistemas de Información</h3>
+<p><strong>IESTP José Domingo Choquehuanca / ISAM</strong><span>2022 · 200 h</span></p>
+</article>
+</div>
+</div>
+<div class="block">
+<p class="eyebrow">Formación complementaria</p>
+<div class="training-grid">
+<article class="training">
+<h3>XIX CRESCITEC</h3>
+<p>Congreso Regional de Estudiantes de Educación Superior en Computación, Informática y Tecnología.</p>
+<span>2022 · 200 h</span>
+</article>
+<article class="training">
+<h3>Habilidades Blandas</h3>
+<p>Municipalidad Distrital de José Domingo Choquehuanca.</p>
+<span>2022 · 200 h</span>
+</article>
+<article class="training">
+<h3>Relaciones Humanas y Excelencia en el Servicio Post COVID-19</h3>
+<p>CEMDH.</p>
+<span>2022 · 320 h</span>
+</article>
+</div>
+</div>
+<div class="block projects-block">
+<p class="eyebrow">Proyectos técnicos y académicos</p>
+<div class="project-grid">
+<article class="project-card">
+<h3>Dashboard de Arquitectura de Redes</h3>
+<span>HTML · CSS · JavaScript</span>
+<p>Aplicación web educativa sobre los modelos OSI y TCP/IP, topologías y dispositivos de red. Incluye una calculadora interactiva para subnetting y direccionamiento IPv4.</p>
+</article>
+<article class="project-card">
+<h3>Sistema de Facturación Electrónica</h3>
+<span>React · Vite · Supabase</span>
+<p>Aplicación web full-stack para la generación de comprobantes en PDF, validación mediante código QR y administración de accesos según roles de usuario.</p>
+</article>
+<article class="project-card">
+<h3>Predicción de Temperatura Media Mensual</h3>
+<span>Python · Machine Learning · Investigación</span>
+<p>Proyecto desarrollado en el semillero «Raíz y Resultados» para aplicar modelos de aprendizaje automático a la predicción de la temperatura media mensual.</p>
+</article>
+<article class="project-card">
+<h3>Sistema Integrado de Gestión Municipal</h3>
+<span>Implementación · Configuración · Soporte</span>
+<p>Apoyo en la configuración y soporte de una plataforma que integra procesos municipales de rentas, trámites y atención al ciudadano, además de orientación a usuarios.</p>
+</article>
+<article class="project-card">
+<h3>Sistema de Trámite Documentario</h3>
+<span>Soporte · Operación · Gestión documental</span>
+<p>Participación en el despliegue y operación de una plataforma para registrar, derivar y dar seguimiento a expedientes, atendiendo incidencias de los usuarios.</p>
+</article>
+<article class="project-card">
+<h3>Modelos Predictivos y Segmentación de Datos</h3>
+<span>Python · R · EViews</span>
+<p>Análisis de conjuntos de datos mediante modelos SARIMA, K-Means y clustering jerárquico, con preparación, exploración, modelado e interpretación de resultados.</p>
+</article>
+</div>
+</div>
+</div>
+</div>
 <script>
   (function(){
     var input = document.getElementById('fotoInput');
     var img = document.getElementById('fotoImg');
     var hint = document.querySelector('.photo-hint');
-    if(!input) return;
+    if(!input || !img) return;
+
+    try {
+      var savedPhoto = localStorage.getItem('cvAntonyPhoto');
+      if(savedPhoto){
+        img.src = savedPhoto;
+        if(hint) hint.style.display = 'none';
+      }
+    } catch (e) {}
+
     input.addEventListener('change', function(e){
       var file = e.target.files && e.target.files[0];
       if(!file) return;
@@ -592,11 +844,11 @@
       reader.onload = function(ev){
         img.src = ev.target.result;
         if(hint) hint.style.display = 'none';
+        try { localStorage.setItem('cvAntonyPhoto', ev.target.result); } catch (e) {}
       };
       reader.readAsDataURL(file);
     });
   })();
 </script>
-
 </body>
 </html>
